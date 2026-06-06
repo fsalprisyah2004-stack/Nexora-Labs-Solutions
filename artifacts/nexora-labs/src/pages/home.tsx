@@ -11,23 +11,24 @@ import {
   Instagram, 
   ArrowRight,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = ["Services", "About", "Portfolio", "Clients", "Contact"];
 
-const portfolioCategories = ["All", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
+const portfolioCategories = ["All", "AI Luxury Jewelry Commercial", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
 type PortfolioCategory = typeof portfolioCategories[number];
 
 const portfolioItems = [
   {
     id: "001",
-    category: "AI Commercials" as PortfolioCategory,
-    title: "Lumina — The Arrival",
-    tag: "60s Spot",
+    category: "AI Luxury Jewelry Commercial" as PortfolioCategory,
+    title: "White Serpent Jewelry",
+    tag: "Luxury Commercial",
     year: "2026",
-    gradient: "from-blue-900/30 via-black to-black",
+    gradient: "from-stone-700/40 via-neutral-900 to-black",
     featured: true,
   },
   {
@@ -131,6 +132,7 @@ const fadeUp = {
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
+  const [showVideoModal, setShowVideoModal] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -389,6 +391,143 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* WHITE SERPENT JEWELRY — FEATURED PROJECT SHOWCASE */}
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
+        {/* Cinematic background — layered gradients evoking gold, pearl, serpent scales */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-stone-900/60 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-yellow-950/20 via-transparent to-transparent" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-stone-800/10 via-transparent to-transparent" />
+          {/* Subtle serpentine curve — CSS only */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+            <path d="M-100,450 C200,100 400,800 700,400 C1000,0 1200,700 1600,350" stroke="white" strokeWidth="1.5" fill="none" />
+            <path d="M-100,500 C250,150 450,850 750,450 C1050,50 1250,750 1650,400" stroke="white" strokeWidth="0.8" fill="none" />
+          </svg>
+          {/* Vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,black_100%)]" />
+        </div>
+
+        {/* Top-left label */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="absolute top-12 left-8 md:left-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">001 — Featured Project</span>
+        </motion.div>
+
+        {/* Top-right category badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="absolute top-12 right-8 md:right-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
+            AI Luxury Jewelry Commercial
+          </span>
+        </motion.div>
+
+        {/* Content — anchored bottom-left, Apple-style */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
+        >
+          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
+            2026
+          </motion.p>
+
+          <motion.h2
+            variants={fadeUp}
+            className="text-[clamp(2.5rem,7vw,6.5rem)] font-light leading-[0.9] tracking-[-0.01em] mb-8"
+          >
+            White Serpent<br />
+            <span className="text-white/50">Jewelry</span>
+          </motion.h2>
+
+          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-10">
+            A cinematic AI-generated luxury commercial featuring a white serpent, high-fashion styling, and premium visual storytelling. Where nature and opulence become one.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="flex items-center gap-6">
+            <Button
+              data-testid="watch-project-btn"
+              onClick={() => setShowVideoModal(true)}
+              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
+            >
+              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
+              </span>
+              Watch Project
+            </Button>
+
+            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">3m 22s</span>
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom rule */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
+      </section>
+
+      {/* VIDEO MODAL */}
+      <AnimatePresence>
+        {showVideoModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6"
+            onClick={() => setShowVideoModal(false)}
+            data-testid="video-modal-overlay"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative w-full max-w-5xl aspect-video bg-neutral-950 border border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Placeholder — replace src with real video URL when ready */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
+                <div className="flex flex-col items-center gap-3 text-center">
+                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-2">
+                    <Play className="w-6 h-6 text-white/60 ml-1" fill="currentColor" />
+                  </div>
+                  <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">White Serpent Jewelry</p>
+                  <p className="text-white/20 text-xs font-light">Video coming soon — add your video URL to activate this player.</p>
+                </div>
+              </div>
+
+              {/* Close button */}
+              <button
+                data-testid="video-modal-close"
+                onClick={() => setShowVideoModal(false)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              {/* Project info strip */}
+              <div className="absolute bottom-0 left-0 right-0 px-8 py-5 border-t border-white/10 flex justify-between items-center">
+                <div>
+                  <p className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase mb-1">001 — Featured Project</p>
+                  <p className="text-sm font-light text-white/70">White Serpent Jewelry</p>
+                </div>
+                <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">AI Luxury Jewelry Commercial · 2026</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* PORTFOLIO */}
       <section className="py-32 px-6" id="portfolio">
