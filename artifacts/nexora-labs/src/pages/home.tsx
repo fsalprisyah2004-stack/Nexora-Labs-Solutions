@@ -153,7 +153,7 @@ export default function Home() {
           data-testid="nav-contact-btn"
           className="rounded-full border-white/20 hover:bg-white hover:text-black text-xs px-5 h-9 font-light tracking-widest uppercase bg-transparent transition-all"
         >
-          Contact Us
+          Book a Discovery Call
         </Button>
       </nav>
 
@@ -219,7 +219,7 @@ export default function Home() {
               data-testid="hero-cta"
               className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white hover:text-black h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500"
             >
-              Contact Us <ArrowRight className="ml-2 w-4 h-4" />
+              Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>
         </motion.div>
@@ -522,7 +522,7 @@ export default function Home() {
               data-testid="contact-cta-btn"
               className="rounded-full bg-white text-black hover:bg-white/90 hover:scale-105 h-16 px-12 text-sm tracking-widest uppercase font-semibold transition-all duration-300"
             >
-              Contact Us
+              Book a Discovery Call
             </Button>
           </motion.div>
         </motion.div>
