@@ -133,7 +133,7 @@ export default function Home() {
         }`}
       >
         <a href="#" data-testid="nav-logo" className="text-sm font-light tracking-widest uppercase">
-          NEXORA LABS
+          NEXORA AI STUDIO
         </a>
         <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => (
@@ -182,7 +182,7 @@ export default function Home() {
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
             className="text-[clamp(2.5rem,8vw,8rem)] font-light leading-[0.9] tracking-[0.3em] uppercase mb-8"
           >
-            NEXORA LABS
+            NEXORA AI STUDIO
           </motion.h1>
 
           <motion.div
@@ -533,7 +533,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-sm font-light tracking-widest uppercase">NEXORA LABS</div>
+            <div className="text-sm font-light tracking-widest uppercase">NEXORA AI STUDIO</div>
             <div className="flex gap-8">
               {navItems.filter(i => i !== "Clients").map(item => (
                 <a key={item} href={`#${item.toLowerCase()}`} className="text-xs text-white/40 hover:text-white uppercase tracking-widest transition-colors" data-testid={`footer-link-${item.toLowerCase()}`}>
