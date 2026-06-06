@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { 
   Film, 
   Sparkles, 
@@ -14,6 +14,84 @@ import {
 import { Button } from "@/components/ui/button";
 
 const navItems = ["Services", "About", "Portfolio", "Clients", "Contact"];
+
+const portfolioCategories = ["All", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
+type PortfolioCategory = typeof portfolioCategories[number];
+
+const portfolioItems = [
+  {
+    id: "001",
+    category: "AI Commercials" as PortfolioCategory,
+    title: "Lumina — The Arrival",
+    tag: "60s Spot",
+    year: "2026",
+    gradient: "from-blue-900/50 via-black to-black",
+    featured: true,
+  },
+  {
+    id: "002",
+    category: "AI Commercials" as PortfolioCategory,
+    title: "Vantara — Zero Hour",
+    tag: "30s Spot",
+    year: "2025",
+    gradient: "from-indigo-900/40 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "003",
+    category: "AI Fashion Ads" as PortfolioCategory,
+    title: "Celestia — Autumn Collection",
+    tag: "Editorial Film",
+    year: "2026",
+    gradient: "from-rose-900/40 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "004",
+    category: "AI Fashion Ads" as PortfolioCategory,
+    title: "Aurum — Black Edition",
+    tag: "Lookbook Film",
+    year: "2025",
+    gradient: "from-amber-900/30 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "005",
+    category: "AI Product Ads" as PortfolioCategory,
+    title: "Orion — Product Launch",
+    tag: "Hero Video",
+    year: "2026",
+    gradient: "from-emerald-900/40 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "006",
+    category: "AI Product Ads" as PortfolioCategory,
+    title: "Nexon — Object Study",
+    tag: "CGI Spot",
+    year: "2025",
+    gradient: "from-cyan-900/30 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "007",
+    category: "AI Brand Campaigns" as PortfolioCategory,
+    title: "Vantara — The Next Chapter",
+    tag: "Brand Film",
+    year: "2026",
+    gradient: "from-violet-900/40 via-neutral-900 to-black",
+    featured: false,
+  },
+  {
+    id: "008",
+    category: "AI Brand Campaigns" as PortfolioCategory,
+    title: "Lumina — Origin Story",
+    tag: "Manifesto",
+    year: "2025",
+    gradient: "from-purple-900/40 via-neutral-900 to-black",
+    featured: false,
+  },
+];
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -32,6 +110,7 @@ const fadeUp = {
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -254,58 +333,141 @@ export default function Home() {
 
       {/* PORTFOLIO */}
       <section className="py-32 px-6" id="portfolio">
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-7xl mx-auto"
         >
-          <motion.div variants={fadeUp} className="mb-16">
+          {/* Header */}
+          <motion.div variants={fadeUp} className="mb-12">
             <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-4">Selected Work</h2>
             <p className="text-white/40 text-xl font-light">A glimpse of the impossible.</p>
           </motion.div>
 
-          <div className="flex flex-col gap-4">
-            {/* Featured */}
-            <motion.div variants={fadeUp} className="group relative aspect-square md:aspect-[21/9] bg-neutral-900 overflow-hidden cursor-pointer border border-transparent hover:border-white/10 transition-colors duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-neutral-900 to-black opacity-60 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
-                  <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white/60 font-mono text-[10px] tracking-widest uppercase mb-3">001 — FLAGSHIP</p>
-                <div className="flex justify-between items-end">
-                  <h3 className="text-3xl font-light tracking-wide">Brand Name</h3>
-                  <span className="text-xs text-white/40 font-mono">2026 // COMMERCIAL</span>
-                </div>
-              </div>
-            </motion.div>
+          {/* Category Tabs */}
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-12 border-b border-white/5 pb-8">
+            {portfolioCategories.map((cat) => (
+              <button
+                key={cat}
+                data-testid={`portfolio-tab-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 rounded-full text-xs font-light tracking-widest uppercase transition-all duration-300 border ${
+                  activeCategory === cat
+                    ? "bg-white text-black border-white"
+                    : "bg-transparent text-white/40 border-white/10 hover:border-white/30 hover:text-white/70"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </motion.div>
 
-            {/* Grid */}
-            <div className="grid md:grid-cols-3 gap-4">
-              {[
-                { id: "002", color: "from-emerald-900/30" },
-                { id: "003", color: "from-purple-900/30" },
-                { id: "004", color: "from-rose-900/30" }
-              ].map((item) => (
-                <motion.div key={item.id} variants={fadeUp} className="group relative aspect-square md:aspect-video bg-neutral-900 overflow-hidden cursor-pointer border border-transparent hover:border-white/10 transition-colors duration-700">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} via-neutral-900 to-black opacity-60 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
-                      <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <p className="text-white/60 font-mono text-[10px] tracking-widest uppercase mb-2">{item.id}</p>
-                    <h3 className="text-xl font-light tracking-wide">Brand Name</h3>
-                  </div>
-                </motion.div>
+          {/* Portfolio Grid */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex flex-col gap-4"
+            >
+              {(() => {
+                const filtered = activeCategory === "All"
+                  ? portfolioItems
+                  : portfolioItems.filter((item) => item.category === activeCategory);
+                const featured = filtered[0];
+                const rest = filtered.slice(1);
+
+                return (
+                  <>
+                    {/* Featured Card */}
+                    {featured && (
+                      <div
+                        data-testid={`portfolio-card-${featured.id}`}
+                        className="group relative aspect-square md:aspect-[21/9] bg-neutral-900 overflow-hidden cursor-pointer border border-transparent hover:border-white/10 transition-colors duration-700"
+                      >
+                        <div className={`absolute inset-0 bg-gradient-to-br ${featured.gradient} opacity-70 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
+                            <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
+                          </div>
+                        </div>
+                        <div className="absolute top-6 right-6">
+                          <span className="font-mono text-[10px] tracking-widest uppercase text-white/30 bg-black/40 backdrop-blur px-3 py-1 border border-white/10">
+                            {featured.category}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <p className="text-white/50 font-mono text-[10px] tracking-widest uppercase mb-3">{featured.id} — FEATURED</p>
+                          <div className="flex justify-between items-end">
+                            <h3 className="text-2xl md:text-3xl font-light tracking-wide">{featured.title}</h3>
+                            <span className="text-xs text-white/40 font-mono hidden md:block">{featured.year} // {featured.tag}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Rest Grid */}
+                    {rest.length > 0 && (
+                      <div className={`grid gap-4 ${rest.length === 1 ? "md:grid-cols-1" : rest.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+                        {rest.map((item) => (
+                          <div
+                            key={item.id}
+                            data-testid={`portfolio-card-${item.id}`}
+                            className="group relative aspect-square md:aspect-video bg-neutral-900 overflow-hidden cursor-pointer border border-transparent hover:border-white/10 transition-colors duration-700"
+                          >
+                            <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                              <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
+                                <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                              </div>
+                            </div>
+                            <div className="absolute top-4 right-4">
+                              <span className="font-mono text-[9px] tracking-widest uppercase text-white/30 bg-black/40 backdrop-blur px-2 py-1 border border-white/10">
+                                {item.category}
+                              </span>
+                            </div>
+                            <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                              <p className="text-white/50 font-mono text-[10px] tracking-widest uppercase mb-2">{item.id} // {item.tag}</p>
+                              <h3 className="text-lg md:text-xl font-light tracking-wide">{item.title}</h3>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {filtered.length === 0 && (
+                      <div className="py-32 text-center text-white/20 font-light tracking-widest uppercase text-sm">
+                        No projects yet
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Category summary strip */}
+          <motion.div variants={fadeUp} className="mt-12 pt-8 border-t border-white/5 flex flex-wrap gap-8 justify-between items-center">
+            <div className="flex gap-6 flex-wrap">
+              {portfolioCategories.slice(1).map((cat) => (
+                <button
+                  key={cat}
+                  data-testid={`portfolio-cat-link-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={() => setActiveCategory(cat)}
+                  className="text-[10px] font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors duration-300"
+                >
+                  {cat} ({portfolioItems.filter(i => i.category === cat).length})
+                </button>
               ))}
             </div>
-          </div>
+            <span className="text-[10px] font-mono tracking-widest text-white/20 uppercase">
+              {portfolioItems.length} Projects Total
+            </span>
+          </motion.div>
         </motion.div>
       </section>
 
