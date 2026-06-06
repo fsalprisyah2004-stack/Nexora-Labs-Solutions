@@ -493,36 +493,39 @@ export default function Home() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative w-full max-w-5xl aspect-video bg-neutral-950 border border-white/10"
+              className="relative flex flex-col bg-black border border-white/10 w-full max-w-sm md:max-w-md"
+              style={{ maxHeight: "90vh" }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Placeholder — replace src with real video URL when ready */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
-                <div className="flex flex-col items-center gap-3 text-center">
-                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-2">
-                    <Play className="w-6 h-6 text-white/60 ml-1" fill="currentColor" />
-                  </div>
-                  <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">White Serpent Jewelry</p>
-                  <p className="text-white/20 text-xs font-light">Video coming soon — add your video URL to activate this player.</p>
+              {/* Header strip */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06] flex-shrink-0">
+                <div>
+                  <p className="font-mono text-[9px] tracking-[0.25em] text-white/30 uppercase">001 — Featured Project</p>
+                  <p className="text-sm font-light text-white/70 mt-0.5">White Serpent Jewelry</p>
                 </div>
+                <button
+                  data-testid="video-modal-close"
+                  onClick={() => setShowVideoModal(false)}
+                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
               </div>
 
-              {/* Close button */}
-              <button
-                data-testid="video-modal-close"
-                onClick={() => setShowVideoModal(false)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
-              >
-                <X className="w-4 h-4" />
-              </button>
+              {/* YouTube Short — 9:16 portrait embed */}
+              <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/bIBEPEt40l4?rel=0&modestbranding=1&autoplay=1&playsinline=1"
+                  title="White Serpent Jewelry — AI Luxury Commercial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
 
-              {/* Project info strip */}
-              <div className="absolute bottom-0 left-0 right-0 px-8 py-5 border-t border-white/10 flex justify-between items-center">
-                <div>
-                  <p className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase mb-1">001 — Featured Project</p>
-                  <p className="text-sm font-light text-white/70">White Serpent Jewelry</p>
-                </div>
-                <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">AI Luxury Jewelry Commercial · 2026</span>
+              {/* Footer strip */}
+              <div className="px-5 py-3 border-t border-white/[0.06] flex-shrink-0">
+                <span className="font-mono text-[9px] tracking-widest text-white/20 uppercase">AI Luxury Jewelry Commercial · 2026</span>
               </div>
             </motion.div>
           </motion.div>
