@@ -253,39 +253,45 @@ export default function Home() {
             <p className="text-white/40 text-xl font-light">Intelligence designed to perform.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {[
-              { 
-                title: "Generative Commercials", 
-                desc: "Full AI-produced video spots. No cameras. No limits.", 
-                icon: Film 
+              {
+                title: "AI Commercials",
+                desc: "Cinematic, fully AI-produced video ads. No cameras, no crew — just stunning results delivered in days.",
+                icon: Film,
+                number: "01"
               },
-              { 
-                title: "Brand Identity AI", 
-                desc: "Neural models trained on your visual language.", 
-                icon: Sparkles 
+              {
+                title: "AI Websites",
+                desc: "Intelligent, conversion-optimised websites designed and built by AI — launched at a fraction of the time and cost.",
+                icon: Sparkles,
+                number: "02"
               },
-              { 
-                title: "Real-Time Synthesis", 
-                desc: "Live content generation, personalized per viewer.", 
-                icon: Zap 
-              },
-              { 
-                title: "Strategic Intelligence", 
-                desc: "AI-driven campaign analysis and optimization.", 
-                icon: BarChart 
+              {
+                title: "AI Automation",
+                desc: "End-to-end business automation powered by AI — from lead capture to content pipelines to customer engagement.",
+                icon: Zap,
+                number: "03"
               }
             ].map((service, i) => (
               <motion.div
                 key={service.title}
                 variants={fadeUp}
                 whileHover={{ scale: 1.02 }}
-                className="group bg-neutral-950 border border-white/8 p-8 transition-all duration-500 hover:border-white/20 hover:bg-neutral-900/50 cursor-default"
+                className="group bg-neutral-950 border border-white/[0.08] p-8 transition-all duration-500 hover:border-white/20 hover:bg-neutral-900/50 cursor-default flex flex-col"
                 data-testid={`service-card-${i}`}
               >
-                <service.icon className="w-8 h-8 text-white/60 mb-8" strokeWidth={1} />
-                <h3 className="text-2xl font-light tracking-wide mb-3">{service.title}</h3>
-                <p className="text-white/50 text-sm font-light leading-relaxed">{service.desc}</p>
+                <div className="flex justify-between items-start mb-10">
+                  <service.icon className="w-7 h-7 text-white/50" strokeWidth={1} />
+                  <span className="font-mono text-[10px] tracking-widest text-white/20">{service.number}</span>
+                </div>
+                <h3 className="text-2xl font-light tracking-wide mb-4">{service.title}</h3>
+                <p className="text-white/50 text-sm font-light leading-relaxed flex-1">{service.desc}</p>
+                <div className="mt-8 pt-6 border-t border-white/5">
+                  <span className="text-[10px] font-mono tracking-widest text-white/30 uppercase hover:text-white/60 transition-colors duration-300 cursor-pointer">
+                    Learn More →
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
