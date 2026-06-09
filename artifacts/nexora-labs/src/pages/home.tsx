@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 
 const navItems = ["Services", "About", "Portfolio", "Clients", "Contact"];
 
-const portfolioCategories = ["All", "AI Luxury Jewelry Commercial", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
+const portfolioCategories = ["All", "AI Luxury Jewelry Commercial", "AI Food Commercial", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
 type PortfolioCategory = typeof portfolioCategories[number];
 
 const portfolioItems = [
@@ -33,6 +33,15 @@ const portfolioItems = [
   },
   {
     id: "002",
+    category: "AI Food Commercial" as PortfolioCategory,
+    title: "Chicken Transformation Commercial",
+    tag: "Food Commercial",
+    year: "2026",
+    gradient: "from-amber-900/40 via-orange-950/20 to-black",
+    featured: false,
+  },
+  {
+    id: "003-c",
     category: "AI Commercials" as PortfolioCategory,
     title: "Vantara — Zero Hour",
     tag: "30s Spot",
@@ -133,6 +142,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [showVideoModal2, setShowVideoModal2] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -475,6 +485,150 @@ export default function Home() {
         {/* Bottom rule */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
       </section>
+
+      {/* CHICKEN TRANSFORMATION COMMERCIAL — PROJECT SHOWCASE */}
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
+        {/* Cinematic background — warm amber/saffron/char tones for Indonesian cuisine */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-950/70 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-orange-950/30 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 w-2/3 h-1/2 bg-gradient-to-tr from-yellow-950/20 via-transparent to-transparent" />
+          {/* Subtle steam-rise lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.035]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+            <path d="M300,900 C290,700 310,500 295,300 C280,100 300,50 305,0" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M600,900 C585,680 615,480 598,260 C582,80 602,30 608,0" stroke="white" strokeWidth="0.7" fill="none" />
+            <path d="M960,900 C948,710 972,520 955,320 C938,120 958,60 963,0" stroke="white" strokeWidth="1.2" fill="none" />
+          </svg>
+          {/* Vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,black_100%)]" />
+        </div>
+
+        {/* Top-left label */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="absolute top-12 left-8 md:left-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">002 — Portfolio Project</span>
+        </motion.div>
+
+        {/* Top-right category badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="absolute top-12 right-8 md:right-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
+            AI Food Commercial
+          </span>
+        </motion.div>
+
+        {/* Content */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
+        >
+          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
+            2026
+          </motion.p>
+
+          <motion.h2
+            variants={fadeUp}
+            className="text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.95] tracking-[-0.01em] mb-8"
+          >
+            Chicken<br />
+            <span className="text-white/50">Transformation</span>
+          </motion.h2>
+
+          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-4">
+            A cinematic AI-generated food commercial showcasing a mesmerising transformation across five iconic Indonesian chicken dishes.
+          </motion.p>
+
+          <motion.p variants={fadeUp} className="text-white/30 text-sm font-mono tracking-widest uppercase mb-10">
+            Chicken Curry → Grilled → Crispy Fried → Green Chili → Curry
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="flex items-center gap-6">
+            <Button
+              data-testid="watch-project-2-btn"
+              onClick={() => setShowVideoModal2(true)}
+              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
+            >
+              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
+              </span>
+              Watch Project
+            </Button>
+            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">AI Food Commercial</span>
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom rule */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
+      </section>
+
+      {/* VIDEO MODAL 2 — CHICKEN TRANSFORMATION */}
+      <AnimatePresence>
+        {showVideoModal2 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6"
+            onClick={() => setShowVideoModal2(false)}
+            data-testid="video-modal-2-overlay"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative flex flex-col bg-black border border-white/10 w-full max-w-sm md:max-w-md"
+              style={{ maxHeight: "90vh" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header strip */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06] flex-shrink-0">
+                <div>
+                  <p className="font-mono text-[9px] tracking-[0.25em] text-white/30 uppercase">002 — Portfolio Project</p>
+                  <p className="text-sm font-light text-white/70 mt-0.5">Chicken Transformation Commercial</p>
+                </div>
+                <button
+                  data-testid="video-modal-2-close"
+                  onClick={() => setShowVideoModal2(false)}
+                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              {/* YouTube Short — 9:16 portrait embed */}
+              <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/ECBuQ9F1NzM?rel=0&modestbranding=1&autoplay=1&playsinline=1"
+                  title="Chicken Transformation Commercial — AI Food Commercial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
+
+              {/* Footer strip */}
+              <div className="px-5 py-3 border-t border-white/[0.06] flex-shrink-0">
+                <span className="font-mono text-[9px] tracking-widest text-white/20 uppercase">AI Food Commercial · 2026</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* VIDEO MODAL */}
       <AnimatePresence>
