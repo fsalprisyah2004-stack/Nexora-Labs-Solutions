@@ -41,7 +41,16 @@ const portfolioItems = [
     featured: false,
   },
   {
-    id: "003-c",
+    id: "003-b",
+    category: "AI Food Commercial" as PortfolioCategory,
+    title: "Alpine Burger Transformation",
+    tag: "Food Commercial",
+    year: "2026",
+    gradient: "from-slate-800/40 via-stone-950/30 to-black",
+    featured: false,
+  },
+  {
+    id: "004-c",
     category: "AI Commercials" as PortfolioCategory,
     title: "Vantara — Zero Hour",
     tag: "30s Spot",
@@ -143,6 +152,7 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [showVideoModal2, setShowVideoModal2] = useState(false);
+  const [showVideoModal3, setShowVideoModal3] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -624,6 +634,158 @@ export default function Home() {
               {/* Footer strip */}
               <div className="px-5 py-3 border-t border-white/[0.06] flex-shrink-0">
                 <span className="font-mono text-[9px] tracking-widest text-white/20 uppercase">AI Food Commercial · 2026</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ALPINE BURGER TRANSFORMATION — PROJECT SHOWCASE */}
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
+        {/* Cinematic background — cool alpine slate/stone/ice tones */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-stone-950/50 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-blue-950/20 via-transparent to-transparent" />
+          <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-slate-800/15 via-transparent to-transparent" />
+          {/* Subtle mountain ridge lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+            <path d="M0,600 L180,340 L320,480 L500,220 L680,400 L820,180 L960,360 L1100,240 L1280,420 L1440,300 L1440,900 Z" stroke="white" strokeWidth="0.8" fill="none" />
+            <path d="M0,700 L200,520 L380,620 L560,380 L740,560 L900,320 L1060,500 L1220,380 L1440,460 L1440,900 Z" stroke="white" strokeWidth="0.5" fill="none" />
+          </svg>
+          {/* Vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,black_100%)]" />
+        </div>
+
+        {/* Top-left label */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="absolute top-12 left-8 md:left-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">003 — Portfolio Project</span>
+        </motion.div>
+
+        {/* Top-right category badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="absolute top-12 right-8 md:right-16"
+        >
+          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
+            AI Food Commercial
+          </span>
+        </motion.div>
+
+        {/* Content */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
+        >
+          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
+            2026
+          </motion.p>
+
+          <motion.h2
+            variants={fadeUp}
+            className="text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.95] tracking-[-0.01em] mb-8"
+          >
+            Alpine Burger<br />
+            <span className="text-white/50">Transformation</span>
+          </motion.h2>
+
+          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-4">
+            A cinematic AI-generated food commercial featuring a gourmet burger transformation sequence in a luxury alpine restaurant setting.
+          </motion.p>
+
+          <motion.p variants={fadeUp} className="text-white/30 text-sm font-mono tracking-widest uppercase mb-4">
+            Cheeseburger → Smash Burger → Crispy Chicken Burger
+          </motion.p>
+
+          {/* Services */}
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-10">
+            {["AI Creative Direction", "AI Image Generation", "AI Video Generation", "Food Commercial Design", "Commercial Storytelling"].map((service) => (
+              <span key={service} className="font-mono text-[9px] tracking-[0.2em] text-white/25 uppercase border border-white/[0.08] px-3 py-1.5">
+                {service}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="flex items-center gap-6">
+            <Button
+              data-testid="watch-project-3-btn"
+              onClick={() => setShowVideoModal3(true)}
+              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
+            >
+              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
+              </span>
+              Watch Project
+            </Button>
+            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">Original Concept · 2026</span>
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom rule */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
+      </section>
+
+      {/* VIDEO MODAL 3 — ALPINE BURGER TRANSFORMATION */}
+      <AnimatePresence>
+        {showVideoModal3 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6"
+            onClick={() => setShowVideoModal3(false)}
+            data-testid="video-modal-3-overlay"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative flex flex-col bg-black border border-white/10 w-full max-w-sm md:max-w-md"
+              style={{ maxHeight: "90vh" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header strip */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06] flex-shrink-0">
+                <div>
+                  <p className="font-mono text-[9px] tracking-[0.25em] text-white/30 uppercase">003 — Portfolio Project</p>
+                  <p className="text-sm font-light text-white/70 mt-0.5">Alpine Burger Transformation</p>
+                </div>
+                <button
+                  data-testid="video-modal-3-close"
+                  onClick={() => setShowVideoModal3(false)}
+                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              {/* YouTube Short — 9:16 portrait embed */}
+              <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/qckLPPNp3F4?rel=0&modestbranding=1&autoplay=1&playsinline=1"
+                  title="Alpine Burger Transformation — AI Food Commercial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
+
+              {/* Footer strip */}
+              <div className="px-5 py-3 border-t border-white/[0.06] flex-shrink-0">
+                <span className="font-mono text-[9px] tracking-widest text-white/20 uppercase">AI Food Commercial · Original Concept · 2026</span>
               </div>
             </motion.div>
           </motion.div>
