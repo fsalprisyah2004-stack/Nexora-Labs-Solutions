@@ -101,6 +101,12 @@ export default function Home() {
   const [showVideoModal2, setShowVideoModal2] = useState(false);
   const [showVideoModal3, setShowVideoModal3] = useState(false);
   const [showVideoModal4, setShowVideoModal4] = useState(false);
+  const openProjectModal = useCallback((id: string) => {
+    if (id === "001") setShowVideoModal(true);
+    else if (id === "002") setShowVideoModal2(true);
+    else if (id === "003-b") setShowVideoModal3(true);
+    else if (id === "004-r") setShowVideoModal4(true);
+  }, []);
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -364,177 +370,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* WHITE SERPENT JEWELRY — FEATURED PROJECT SHOWCASE */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
-        {/* Cinematic background — layered gradients evoking gold, pearl, serpent scales */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-stone-900/60 via-black to-black" />
-          <div className="absolute inset-0 bg-gradient-to-tl from-yellow-950/20 via-transparent to-transparent" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-stone-800/10 via-transparent to-transparent" />
-          {/* Subtle serpentine curve — CSS only */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-            <path d="M-100,450 C200,100 400,800 700,400 C1000,0 1200,700 1600,350" stroke="white" strokeWidth="1.5" fill="none" />
-            <path d="M-100,500 C250,150 450,850 750,450 C1050,50 1250,750 1650,400" stroke="white" strokeWidth="0.8" fill="none" />
-          </svg>
-          {/* Vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,black_100%)]" />
-        </div>
 
-        {/* Top-left label */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="absolute top-12 left-8 md:left-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">001 — Featured Project</span>
-        </motion.div>
-
-        {/* Top-right category badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="absolute top-12 right-8 md:right-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
-            AI Luxury Jewelry Commercial
-          </span>
-        </motion.div>
-
-        {/* Content — anchored bottom-left, Apple-style */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
-        >
-          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
-            2026
-          </motion.p>
-
-          <motion.h2
-            variants={fadeUp}
-            className="text-[clamp(2.5rem,7vw,6.5rem)] font-light leading-[0.9] tracking-[-0.01em] mb-8"
-          >
-            White Serpent<br />
-            <span className="text-white/50">Jewelry</span>
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-10">
-            A cinematic AI-generated luxury commercial featuring a white serpent, high-fashion styling, and premium visual storytelling. Where nature and opulence become one.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="flex items-center gap-6">
-            <Button
-              data-testid="watch-project-btn"
-              onClick={() => setShowVideoModal(true)}
-              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
-            >
-              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
-                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
-              </span>
-              Watch Project
-            </Button>
-
-            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">3m 22s</span>
-          </motion.div>
-        </motion.div>
-
-        {/* Bottom rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
-      </section>
-
-      {/* CHICKEN TRANSFORMATION COMMERCIAL — PROJECT SHOWCASE */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
-        {/* Cinematic background — warm amber/saffron/char tones for Indonesian cuisine */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-950/70 via-black to-black" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-orange-950/30 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 w-2/3 h-1/2 bg-gradient-to-tr from-yellow-950/20 via-transparent to-transparent" />
-          {/* Subtle steam-rise lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.035]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-            <path d="M300,900 C290,700 310,500 295,300 C280,100 300,50 305,0" stroke="white" strokeWidth="1" fill="none" />
-            <path d="M600,900 C585,680 615,480 598,260 C582,80 602,30 608,0" stroke="white" strokeWidth="0.7" fill="none" />
-            <path d="M960,900 C948,710 972,520 955,320 C938,120 958,60 963,0" stroke="white" strokeWidth="1.2" fill="none" />
-          </svg>
-          {/* Vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,black_100%)]" />
-        </div>
-
-        {/* Top-left label */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="absolute top-12 left-8 md:left-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">002 — Portfolio Project</span>
-        </motion.div>
-
-        {/* Top-right category badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="absolute top-12 right-8 md:right-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
-            AI Food Commercial
-          </span>
-        </motion.div>
-
-        {/* Content */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
-        >
-          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
-            2026
-          </motion.p>
-
-          <motion.h2
-            variants={fadeUp}
-            className="text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.95] tracking-[-0.01em] mb-8"
-          >
-            Chicken<br />
-            <span className="text-white/50">Transformation</span>
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-4">
-            A cinematic AI-generated food commercial showcasing a mesmerising transformation across five iconic Indonesian chicken dishes.
-          </motion.p>
-
-          <motion.p variants={fadeUp} className="text-white/30 text-sm font-mono tracking-widest uppercase mb-10">
-            Chicken Curry → Grilled → Crispy Fried → Green Chili → Curry
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="flex items-center gap-6">
-            <Button
-              data-testid="watch-project-2-btn"
-              onClick={() => setShowVideoModal2(true)}
-              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
-            >
-              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
-                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
-              </span>
-              Watch Project
-            </Button>
-            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">AI Food Commercial</span>
-          </motion.div>
-        </motion.div>
-
-        {/* Bottom rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
-      </section>
 
       {/* VIDEO MODAL 2 — CHICKEN TRANSFORMATION */}
       <AnimatePresence>
@@ -592,101 +428,6 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* ALPINE BURGER TRANSFORMATION — PROJECT SHOWCASE */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
-        {/* Cinematic background — cool alpine slate/stone/ice tones */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-stone-950/50 to-black" />
-          <div className="absolute inset-0 bg-gradient-to-tl from-blue-950/20 via-transparent to-transparent" />
-          <div className="absolute top-0 right-0 w-1/2 h-2/3 bg-gradient-to-bl from-slate-800/15 via-transparent to-transparent" />
-          {/* Subtle mountain ridge lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-            <path d="M0,600 L180,340 L320,480 L500,220 L680,400 L820,180 L960,360 L1100,240 L1280,420 L1440,300 L1440,900 Z" stroke="white" strokeWidth="0.8" fill="none" />
-            <path d="M0,700 L200,520 L380,620 L560,380 L740,560 L900,320 L1060,500 L1220,380 L1440,460 L1440,900 Z" stroke="white" strokeWidth="0.5" fill="none" />
-          </svg>
-          {/* Vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,black_100%)]" />
-        </div>
-
-        {/* Top-left label */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="absolute top-12 left-8 md:left-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">003 — Portfolio Project</span>
-        </motion.div>
-
-        {/* Top-right category badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="absolute top-12 right-8 md:right-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
-            AI Food Commercial
-          </span>
-        </motion.div>
-
-        {/* Content */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
-        >
-          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
-            2026
-          </motion.p>
-
-          <motion.h2
-            variants={fadeUp}
-            className="text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.95] tracking-[-0.01em] mb-8"
-          >
-            Alpine Burger<br />
-            <span className="text-white/50">Transformation</span>
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-4">
-            A cinematic AI-generated food commercial featuring a gourmet burger transformation sequence in a luxury alpine restaurant setting.
-          </motion.p>
-
-          <motion.p variants={fadeUp} className="text-white/30 text-sm font-mono tracking-widest uppercase mb-4">
-            Cheeseburger → Smash Burger → Crispy Chicken Burger
-          </motion.p>
-
-          {/* Services */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-10">
-            {["AI Creative Direction", "AI Image Generation", "AI Video Generation", "Food Commercial Design", "Commercial Storytelling"].map((service) => (
-              <span key={service} className="font-mono text-[9px] tracking-[0.2em] text-white/25 uppercase border border-white/[0.08] px-3 py-1.5">
-                {service}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="flex items-center gap-6">
-            <Button
-              data-testid="watch-project-3-btn"
-              onClick={() => setShowVideoModal3(true)}
-              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
-            >
-              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
-                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
-              </span>
-              Watch Project
-            </Button>
-            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">Original Concept · 2026</span>
-          </motion.div>
-        </motion.div>
-
-        {/* Bottom rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
-      </section>
 
       {/* VIDEO MODAL 3 — ALPINE BURGER TRANSFORMATION */}
       <AnimatePresence>
@@ -744,108 +485,6 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* RENDANG EVOLUTION — PROJECT SHOWCASE */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black border-t border-white/[0.04]">
-        {/* Cinematic background — deep rendang burgundy/terracotta/earth tones, West Sumatran warmth */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-red-950/70 via-stone-950/50 to-black" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-amber-950/25 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 w-3/4 h-1/2 bg-gradient-to-tr from-red-900/10 via-transparent to-transparent" />
-          {/* Subtle Rumah Gadang silhouette — traditional curved roofline */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-            {/* Curved Minangkabau roof peaks */}
-            <path d="M0,700 L120,600 L200,650 L300,500 L400,580 L520,420 L640,520 L760,380 L880,500 L980,420 L1100,560 L1200,480 L1320,600 L1440,520 L1440,900 L0,900 Z" stroke="white" strokeWidth="0.8" fill="none" />
-            <path d="M200,900 L200,650" stroke="white" strokeWidth="0.5" fill="none" />
-            <path d="M640,900 L640,520" stroke="white" strokeWidth="0.5" fill="none" />
-            <path d="M1100,900 L1100,560" stroke="white" strokeWidth="0.5" fill="none" />
-          </svg>
-          {/* Vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,black_100%)]" />
-        </div>
-
-        {/* Top-left label */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="absolute top-12 left-8 md:left-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">004 — Portfolio Project</span>
-        </motion.div>
-
-        {/* Top-right category badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="absolute top-12 right-8 md:right-16"
-        >
-          <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase border border-white/10 px-4 py-2">
-            AI Food Commercial
-          </span>
-        </motion.div>
-
-        {/* Content */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative z-10 px-8 md:px-16 pb-16 md:pb-24 max-w-4xl"
-        >
-          <motion.p variants={fadeUp} className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase mb-6">
-            2026
-          </motion.p>
-
-          <motion.h2
-            variants={fadeUp}
-            className="text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.95] tracking-[-0.01em] mb-8"
-          >
-            Rendang<br />
-            <span className="text-white/50">Evolution</span>
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-white/50 text-lg font-light leading-relaxed max-w-lg mb-4">
-            A cinematic AI-generated food commercial inspired by the rich culinary heritage of Indonesia, set against the iconic backdrop of West Sumatra.
-          </motion.p>
-
-          <motion.p variants={fadeUp} className="text-white/30 text-sm font-mono tracking-widest uppercase mb-4">
-            Rendang → Dendeng Cabe Hijau → Beef Satay
-          </motion.p>
-
-          <motion.p variants={fadeUp} className="text-white/20 text-xs font-mono leading-relaxed max-w-md mb-8">
-            Rumah Gadang architecture · Kelok Sembilan landscape · West Sumatran heritage
-          </motion.p>
-
-          {/* Services */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-10">
-            {["AI Creative Direction", "AI Image Generation", "AI Video Generation", "Food Commercial Design", "Cultural Storytelling"].map((service) => (
-              <span key={service} className="font-mono text-[9px] tracking-[0.2em] text-white/25 uppercase border border-white/[0.08] px-3 py-1.5">
-                {service}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="flex items-center gap-6">
-            <Button
-              data-testid="watch-project-4-btn"
-              onClick={() => setShowVideoModal4(true)}
-              className="group rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 hover:scale-105 flex items-center gap-3"
-            >
-              <span className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
-                <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
-              </span>
-              Watch Project
-            </Button>
-            <span className="text-white/20 text-xs font-mono tracking-widest uppercase">Original Concept · 2026</span>
-          </motion.div>
-        </motion.div>
-
-        {/* Bottom rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/[0.04]" />
-      </section>
 
       {/* VIDEO MODAL 4 — RENDANG EVOLUTION */}
       <AnimatePresence>
@@ -1015,6 +654,7 @@ export default function Home() {
                     {featured && (
                       <div
                         data-testid={`portfolio-card-${featured.id}`}
+                        onClick={() => openProjectModal(featured.id)}
                         className="group relative aspect-square md:aspect-[21/9] bg-black overflow-hidden cursor-pointer border border-white/[0.06] hover:border-white/20 transition-colors duration-700"
                       >
                         <div className={`absolute inset-0 bg-gradient-to-br ${featured.gradient} opacity-40 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
@@ -1045,6 +685,7 @@ export default function Home() {
                           <div
                             key={item.id}
                             data-testid={`portfolio-card-${item.id}`}
+                            onClick={() => openProjectModal(item.id)}
                             className="group relative aspect-square md:aspect-video bg-black overflow-hidden cursor-pointer border border-white/[0.06] hover:border-white/20 transition-colors duration-700"
                           >
                             <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-40 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
