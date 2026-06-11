@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 
 const navItems = ["Services", "About", "Portfolio", "Clients", "Contact"];
 
-const portfolioCategories = ["All", "AI Luxury Jewelry Commercial", "AI Food Commercial", "AI Commercials", "AI Fashion Ads", "AI Product Ads", "AI Brand Campaigns"] as const;
+const portfolioCategories = ["All", "AI Luxury Jewelry Commercial", "AI Food Commercial"] as const;
 type PortfolioCategory = typeof portfolioCategories[number];
 
 const portfolioItems = [
@@ -57,69 +57,6 @@ const portfolioItems = [
     tag: "Food Commercial",
     year: "2026",
     gradient: "from-red-950/50 via-stone-950/30 to-black",
-    featured: false,
-  },
-  {
-    id: "004-c",
-    category: "AI Commercials" as PortfolioCategory,
-    title: "Vantara — Zero Hour",
-    tag: "30s Spot",
-    year: "2025",
-    gradient: "from-indigo-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "003",
-    category: "AI Fashion Ads" as PortfolioCategory,
-    title: "Celestia — Autumn Collection",
-    tag: "Editorial Film",
-    year: "2026",
-    gradient: "from-rose-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "004",
-    category: "AI Fashion Ads" as PortfolioCategory,
-    title: "Aurum — Black Edition",
-    tag: "Lookbook Film",
-    year: "2025",
-    gradient: "from-amber-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "005",
-    category: "AI Product Ads" as PortfolioCategory,
-    title: "Orion — Product Launch",
-    tag: "Hero Video",
-    year: "2026",
-    gradient: "from-emerald-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "006",
-    category: "AI Product Ads" as PortfolioCategory,
-    title: "Nexon — Object Study",
-    tag: "CGI Spot",
-    year: "2025",
-    gradient: "from-cyan-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "007",
-    category: "AI Brand Campaigns" as PortfolioCategory,
-    title: "Vantara — The Next Chapter",
-    tag: "Brand Film",
-    year: "2026",
-    gradient: "from-violet-900/20 via-black to-black",
-    featured: false,
-  },
-  {
-    id: "008",
-    category: "AI Brand Campaigns" as PortfolioCategory,
-    title: "Lumina — Origin Story",
-    tag: "Manifesto",
-    year: "2025",
-    gradient: "from-purple-900/20 via-black to-black",
     featured: false,
   },
 ];
@@ -233,14 +170,16 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <Button 
-          variant="outline" 
-          size="sm" 
-          data-testid="nav-contact-btn"
-          className="rounded-full border-white/20 hover:bg-white hover:text-black text-xs px-5 h-9 font-light tracking-widest uppercase bg-transparent transition-all"
-        >
-          Book a Discovery Call
-        </Button>
+        <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            data-testid="nav-contact-btn"
+            className="rounded-full border-white/20 hover:bg-white hover:text-black text-xs px-5 h-9 font-light tracking-widest uppercase bg-transparent transition-all"
+          >
+            Book a Discovery Call
+          </Button>
+        </a>
       </nav>
 
       {/* HERO */}
@@ -301,12 +240,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
           >
-            <Button 
-              data-testid="hero-cta"
-              className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white hover:text-black h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500"
-            >
-              Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
+              <Button 
+                data-testid="hero-cta"
+                className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white hover:text-black h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500"
+              >
+                Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
 
@@ -1270,13 +1211,15 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={fadeUp}>
-            <Button 
-              size="lg" 
-              data-testid="contact-cta-btn"
-              className="rounded-full bg-white text-black hover:bg-white/90 hover:scale-105 h-14 px-10 text-sm tracking-widest uppercase font-semibold transition-all duration-500"
-            >
-              Book a Discovery Call
-            </Button>
+            <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg" 
+                data-testid="contact-cta-btn"
+                className="rounded-full bg-white text-black hover:bg-white/90 hover:scale-105 h-14 px-10 text-sm tracking-widest uppercase font-semibold transition-all duration-500"
+              >
+                Book a Discovery Call
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </section>
