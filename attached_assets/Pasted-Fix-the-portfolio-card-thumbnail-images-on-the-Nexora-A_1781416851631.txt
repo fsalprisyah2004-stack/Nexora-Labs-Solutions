@@ -1,0 +1,51 @@
+Fix the portfolio card thumbnail images on the Nexora AI Studio website.
+
+The current portfolio images are visually attractive, but some of them do not match the actual project content.
+
+Please update the portfolio card thumbnails so that each image accurately represents the corresponding project.
+
+Correct each project as follows:
+
+1. White Serpent Jewelry
+
+* Keep the serpent concept.
+* Replace the current green serpent image with a premium white serpent visual.
+* The image should feel luxurious, elegant, cinematic, and high-end.
+* Use white/silver tones with a dark premium background.
+* The visual should match a luxury jewelry commercial.
+
+2. Chicken Transformation Commercial
+
+* Replace the current incorrect image with a cinematic chicken dish visual.
+* The thumbnail should clearly show Indonesian chicken food, especially a rich chicken curry / ayam gulai style visual.
+* Use dramatic food lighting, steam, spices, and premium food commercial aesthetics.
+* Make it look like a real AI food commercial thumbnail.
+
+3. Alpine Burger Transformation
+
+* Replace the current berry bowl image with a premium burger image.
+* The thumbnail should show a large gourmet burger with cinematic lighting.
+* It should feel like a luxury burger commercial.
+* Use dramatic food photography and shallow depth of field.
+
+4. Rendang Evolution
+
+* Replace the current berry bowl image with an Indonesian rendang / beef dish visual.
+* The image should clearly represent rendang or a rich beef dish.
+* Add steam, spices, and cinematic food styling.
+* Make it feel like an authentic premium Indonesian food commercial.
+
+Design Requirements:
+
+* Keep the current portfolio layout.
+* Keep the current hover effects and button functionality.
+* Keep the current dark luxury Nexora AI Studio design style.
+* Each card should use a full-cover thumbnail image.
+* Add a subtle dark overlay so the project title remains readable.
+* The thumbnail should visually match the actual video/project content.
+* Do not use unrelated placeholder images.
+* Do not change the project titles or links.
+* Only improve and correct the thumbnail visuals.
+
+Goal:
+Each portfolio card should instantly communicate what the project is about before the visitor clicks it.

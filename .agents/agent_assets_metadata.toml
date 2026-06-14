@@ -1,5 +1,28 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "41oI1i9L-YA4q7I65Lctc"
+uri = "file://artifacts/nexora-labs/public/portfolio/white-serpent-jewelry.png"
+type = "image"
+title = "white serpent luxury jewelry"
+
+[[generated]]
+id = "QCkNuD2lJDWa3smD_vTQJ"
+uri = "file://artifacts/nexora-labs/public/portfolio/chicken-transformation.png"
+type = "image"
+title = "indonesian chicken curry cinematic"
+
+[[generated]]
+id = "xcMnm57I_mp7vci0fC1kS"
+uri = "file://artifacts/nexora-labs/public/portfolio/alpine-burger.png"
+type = "image"
+title = "gourmet smash burger cinematic"
+
+[[generated]]
+id = "2nMGHANmSrc7cCHeGg4UA"
+uri = "file://artifacts/nexora-labs/public/portfolio/rendang-evolution.png"
+type = "image"
+title = "indonesian rendang beef cinematic"
 
 [[outputs]]
 id = "fHafAR9yCr-nZgGyK4XB-"

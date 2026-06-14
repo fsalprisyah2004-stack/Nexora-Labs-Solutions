@@ -29,7 +29,7 @@ const portfolioItems = [
     title: "White Serpent Jewelry",
     tag: "Luxury Commercial",
     year: "2026",
-    image: "/portfolio/white-serpent-jewelry.jpg",
+    image: "/portfolio/white-serpent-jewelry.png",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ const portfolioItems = [
     title: "Chicken Transformation Commercial",
     tag: "Food Commercial",
     year: "2026",
-    image: "/portfolio/chicken-transformation.jpg",
+    image: "/portfolio/chicken-transformation.png",
     featured: false,
   },
   {
@@ -47,7 +47,7 @@ const portfolioItems = [
     title: "Alpine Burger Transformation",
     tag: "Food Commercial",
     year: "2026",
-    image: "/portfolio/alpine-burger.jpg",
+    image: "/portfolio/alpine-burger.png",
     featured: false,
   },
   {
@@ -56,7 +56,7 @@ const portfolioItems = [
     title: "Rendang Evolution",
     tag: "Food Commercial",
     year: "2026",
-    image: "/portfolio/rendang-evolution.jpg",
+    image: "/portfolio/rendang-evolution.png",
     featured: false,
   },
 ];
