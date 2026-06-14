@@ -11,8 +11,6 @@ import {
   Instagram,
   Youtube,
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,22 +59,22 @@ const portfolioItems = [
   },
 ];
 
-const testimonials = [
+const whyNexoraCards = [
   {
-    quote: "Nexora cut our production timeline from 3 months to 3 days. The commercial outperformed everything we'd done before.",
-    author: "Sarah K.",
-    role: "CMO at Lumina"
+    icon: "sparkles",
+    title: "From Concept to Visual",
+    description: "We transform simple ideas into premium visual concepts, campaign assets, and portfolio-ready creative showcases.",
   },
   {
-    quote: "I've never seen anything like it. The AI understood our brand better than agencies we'd worked with for years.",
-    author: "James R.",
-    role: "Head of Marketing at Vantara"
+    icon: "zap",
+    title: "Fast AI Production Workflow",
+    description: "Our workflow combines AI image generation, AI video generation, creative direction, and fast iteration to move from idea to final visual faster.",
   },
   {
-    quote: "We launched a full brand campaign in a week. The results were extraordinary. We're never going back.",
-    author: "Priya M.",
-    role: "Founder at Celestia"
-  }
+    icon: "film",
+    title: "Built for Modern Brands",
+    description: "Designed for brands, creators, and businesses that want cinematic, premium, and scroll-stopping visuals for the digital era.",
+  },
 ];
 
 const staggerContainer = {
@@ -111,38 +109,6 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const testimonialTimerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const nextTestimonial = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
-
-  const prevTestimonial = useCallback(() => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, []);
-
-  useEffect(() => {
-    testimonialTimerRef.current = setInterval(nextTestimonial, 5000);
-    return () => {
-      if (testimonialTimerRef.current) clearInterval(testimonialTimerRef.current);
-    };
-  }, [nextTestimonial]);
-  
-  const resetTimer = () => {
-    if (testimonialTimerRef.current) clearInterval(testimonialTimerRef.current);
-    testimonialTimerRef.current = setInterval(nextTestimonial, 5000);
-  };
-
-  const handleNextTestimonial = () => {
-    nextTestimonial();
-    resetTimer();
-  };
-
-  const handlePrevTestimonial = () => {
-    prevTestimonial();
-    resetTimer();
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -771,70 +737,48 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-32 px-6" id="testimonials">
-        <motion.div 
+      {/* WHY NEXORA */}
+      <section className="py-32 px-6" id="why-nexora">
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-7xl mx-auto"
         >
-          <motion.div variants={fadeUp} className="mb-24">
-            <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase block mb-4">TESTIMONIALS</span>
-            <h2 className="text-4xl font-light tracking-wide">What our clients say.</h2>
+          {/* Header */}
+          <motion.div variants={fadeUp} className="mb-20 text-center">
+            <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase block mb-4">OUR APPROACH</span>
+            <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-6">Why Nexora</h2>
+            <p className="text-white/40 font-light text-lg max-w-xl mx-auto leading-relaxed">
+              AI-powered creative production for modern brands, visual campaigns, and cinematic digital content.
+            </p>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="relative max-w-3xl mx-auto px-12 md:px-20 min-h-[300px] flex flex-col items-center justify-center">
-            <button 
-              onClick={handlePrevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors p-2"
-              data-testid="testimonial-prev"
-            >
-              <ChevronLeft className="w-8 h-8 font-light" strokeWidth={1} />
-            </button>
-
-            <button 
-              onClick={handleNextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors p-2"
-              data-testid="testimonial-next"
-            >
-              <ChevronRight className="w-8 h-8 font-light" strokeWidth={1} />
-            </button>
-
-            <div className="mb-6 font-serif text-6xl text-white/10 leading-none">"</div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col items-center"
+          {/* Cards */}
+          <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6">
+            {whyNexoraCards.map((card) => (
+              <div
+                key={card.title}
+                className="group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.07] backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] flex flex-col gap-6"
               >
-                <p className="text-xl md:text-2xl font-light text-white/80 italic leading-relaxed mb-8">
-                  {testimonials[currentTestimonial].quote}
-                </p>
-                <div className="text-sm font-mono text-white/40 tracking-widest uppercase mt-6">
-                  {testimonials[currentTestimonial].author} — {testimonials[currentTestimonial].role}
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center group-hover:bg-white/[0.10] group-hover:border-white/[0.15] transition-all duration-500">
+                  {card.icon === "sparkles" && <Sparkles className="w-5 h-5 text-white/60" strokeWidth={1.2} />}
+                  {card.icon === "zap" && <Zap className="w-5 h-5 text-white/60" strokeWidth={1.2} />}
+                  {card.icon === "film" && <Film className="w-5 h-5 text-white/60" strokeWidth={1.2} />}
                 </div>
-              </motion.div>
-            </AnimatePresence>
 
-            <div className="flex gap-3 mt-12">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setCurrentTestimonial(idx);
-                    resetTimer();
-                  }}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${currentTestimonial === idx ? "bg-white" : "bg-white/20"}`}
-                  data-testid={`testimonial-dot-${idx}`}
-                />
-              ))}
-            </div>
+                {/* Content */}
+                <div className="flex flex-col gap-3 flex-1">
+                  <h3 className="text-lg font-light tracking-wide text-white/90">{card.title}</h3>
+                  <p className="text-white/40 text-sm font-light leading-relaxed">{card.description}</p>
+                </div>
+
+                {/* Bottom accent line */}
+                <div className="h-px bg-white/[0.06] group-hover:bg-white/[0.14] transition-colors duration-500 w-full" />
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </section>
