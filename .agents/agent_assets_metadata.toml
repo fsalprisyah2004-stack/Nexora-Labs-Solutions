@@ -1,0 +1,26 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "fHafAR9yCr-nZgGyK4XB-"
+uri = "file://attached_assets/stock_images/white-serpent-jewelry.jpg"
+type = "image"
+title = "luxury snake serpent jewelry editorial cinematic dark black gold dramatic lighting high fashion"
+
+[[outputs]]
+id = "B4GnD0kaDYz63C3hEmbSH"
+uri = "file://attached_assets/stock_images/chicken-transformation.jpg"
+type = "image"
+title = "crispy fried chicken cinematic food photography dark dramatic moody lighting premium commercial"
+
+[[outputs]]
+id = "HBlcJuZvC8MLbU_gdViZ5"
+uri = "file://attached_assets/stock_images/rendang-evolution.jpg"
+type = "image"
+title = "Indonesian beef rendang rich dark spices cinematic food photography steam moody premium"
+
+[[outputs]]
+id = "YpuwtokJxrUOrL1uUYDFR"
+uri = "file://attached_assets/stock_images/alpine-burger.jpg"
+type = "image"
+title = "gourmet cheeseburger dark moody food photography cinematic close up"

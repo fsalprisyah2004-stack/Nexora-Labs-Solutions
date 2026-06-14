@@ -29,7 +29,7 @@ const portfolioItems = [
     title: "White Serpent Jewelry",
     tag: "Luxury Commercial",
     year: "2026",
-    gradient: "from-stone-700/40 via-neutral-900 to-black",
+    image: "/portfolio/white-serpent-jewelry.jpg",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ const portfolioItems = [
     title: "Chicken Transformation Commercial",
     tag: "Food Commercial",
     year: "2026",
-    gradient: "from-amber-900/40 via-orange-950/20 to-black",
+    image: "/portfolio/chicken-transformation.jpg",
     featured: false,
   },
   {
@@ -47,7 +47,7 @@ const portfolioItems = [
     title: "Alpine Burger Transformation",
     tag: "Food Commercial",
     year: "2026",
-    gradient: "from-slate-800/40 via-stone-950/30 to-black",
+    image: "/portfolio/alpine-burger.jpg",
     featured: false,
   },
   {
@@ -56,7 +56,7 @@ const portfolioItems = [
     title: "Rendang Evolution",
     tag: "Food Commercial",
     year: "2026",
-    gradient: "from-red-950/50 via-stone-950/30 to-black",
+    image: "/portfolio/rendang-evolution.jpg",
     featured: false,
   },
 ];
@@ -639,7 +639,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-6"
             >
               {(() => {
                 const filtered = activeCategory === "All"
@@ -655,24 +655,41 @@ export default function Home() {
                       <div
                         data-testid={`portfolio-card-${featured.id}`}
                         onClick={() => openProjectModal(featured.id)}
-                        className="group relative aspect-square md:aspect-[21/9] bg-black overflow-hidden cursor-pointer border border-white/[0.06] hover:border-white/20 transition-colors duration-700"
+                        className="group relative aspect-square md:aspect-[21/8] rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-[0_0_80px_rgba(255,255,255,0.06)] ring-1 ring-white/[0.07] hover:ring-white/[0.18]"
                       >
-                        <div className={`absolute inset-0 bg-gradient-to-br ${featured.gradient} opacity-40 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
-                            <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
-                          </div>
-                        </div>
-                        <div className="absolute top-6 right-6">
-                          <span className="font-mono text-[10px] tracking-widest uppercase text-white/30 bg-black/40 backdrop-blur px-3 py-1 border border-white/10">
+                        {/* Background image */}
+                        <img
+                          src={featured.image}
+                          alt={featured.title}
+                          className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
+                        />
+                        {/* Layered dark overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+                        {/* Top row */}
+                        <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+                          <span className="font-mono text-[10px] tracking-[0.3em] text-white/40 uppercase">{featured.id} — Featured</span>
+                          <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/60 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
                             {featured.category}
                           </span>
                         </div>
-                        <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <p className="text-white/50 font-mono text-[10px] tracking-widest uppercase mb-3">{featured.id} — FEATURED</p>
+                        {/* Center play button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-20 h-20 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white/[0.12] group-hover:border-white/40 group-hover:scale-110 transition-all duration-500 opacity-60 group-hover:opacity-100">
+                            <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
+                          </div>
+                        </div>
+                        {/* Bottom info */}
+                        <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/50 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            ▶ Watch Project
+                          </p>
                           <div className="flex justify-between items-end">
-                            <h3 className="text-2xl md:text-3xl font-light tracking-wide">{featured.title}</h3>
-                            <span className="text-xs text-white/40 font-mono hidden md:block">{featured.year} // {featured.tag}</span>
+                            <div>
+                              <h3 className="text-2xl md:text-4xl font-light tracking-wide text-white mb-1">{featured.title}</h3>
+                              <p className="text-white/40 font-mono text-[11px] tracking-widest uppercase">{featured.year} · {featured.tag}</p>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block" />
                           </div>
                         </div>
                       </div>
@@ -686,22 +703,36 @@ export default function Home() {
                             key={item.id}
                             data-testid={`portfolio-card-${item.id}`}
                             onClick={() => openProjectModal(item.id)}
-                            className="group relative aspect-square md:aspect-video bg-black overflow-hidden cursor-pointer border border-white/[0.06] hover:border-white/20 transition-colors duration-700"
+                            className="group relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-[0_0_60px_rgba(255,255,255,0.06)] ring-1 ring-white/[0.07] hover:ring-white/[0.18]"
                           >
-                            <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-40 group-hover:scale-105 transition-transform duration-[1.5s] ease-out`} />
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                              <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
-                                <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
-                              </div>
-                            </div>
-                            <div className="absolute top-4 right-4">
-                              <span className="font-mono text-[9px] tracking-widest uppercase text-white/30 bg-black/40 backdrop-blur px-2 py-1 border border-white/10">
-                                {item.category}
+                            {/* Background image */}
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
+                            />
+                            {/* Dark overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/10" />
+                            {/* Top row */}
+                            <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
+                              <span className="font-mono text-[9px] tracking-[0.3em] text-white/40 uppercase">{item.id}</span>
+                              <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-white/55 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                                {item.tag}
                               </span>
                             </div>
-                            <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                              <p className="text-white/50 font-mono text-[10px] tracking-widest uppercase mb-2">{item.id} // {item.tag}</p>
-                              <h3 className="text-lg md:text-xl font-light tracking-wide">{item.title}</h3>
+                            {/* Center play */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-16 h-16 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white/[0.12] group-hover:border-white/40 group-hover:scale-110 transition-all duration-500 opacity-55 group-hover:opacity-100">
+                                <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
+                              </div>
+                            </div>
+                            {/* Bottom info */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                              <p className="font-mono text-[9px] tracking-[0.4em] uppercase text-white/45 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                ▶ Watch Project
+                              </p>
+                              <h3 className="text-lg md:text-xl font-light tracking-wide text-white">{item.title}</h3>
+                              <p className="text-white/35 font-mono text-[10px] tracking-widest uppercase mt-1">{item.year}</p>
                             </div>
                           </div>
                         ))}
