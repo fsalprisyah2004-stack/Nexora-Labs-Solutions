@@ -65,6 +65,17 @@ const xoraCapabilities = [
   { icon: "zap", label: "Productivity and task management" },
 ];
 
+const xoraCommandChips = [
+  "Finance",
+  "Coding",
+  "Video Editing",
+  "Research",
+  "Smart Home",
+  "Productivity",
+  "AI Images",
+  "Websites",
+];
+
 function XoraIcon({ icon }: { icon: string }) {
   const cls = "w-3 h-3 text-white/40 flex-shrink-0";
   if (icon === "zap") return <Zap className={cls} strokeWidth={1.3} />;
@@ -283,6 +294,46 @@ export default function About() {
               is Project XORA: an experimental AI assistant concept imagined to
               help people work, create, analyze, and build more intelligently.
             </p>
+
+            {/* Two-layer visual */}
+            <div className="mt-2 flex flex-col gap-0">
+              {/* Layer 1 — Current */}
+              <motion.div
+                variants={fadeUp}
+                className="relative p-4 rounded-t-xl border border-white/[0.09] bg-white/[0.025] overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+                <p className="font-mono text-[8px] tracking-[0.28em] text-white/30 uppercase mb-1.5">Layer 01 — Current</p>
+                <p className="text-white/55 text-xs font-light leading-relaxed">
+                  AI Commercials · AI Visuals · Premium Websites · Digital Brand Experiences
+                </p>
+              </motion.div>
+              {/* Connector */}
+              <div className="flex flex-col items-center py-1 bg-white/[0.01] border-x border-white/[0.05]">
+                <motion.div
+                  className="w-px h-3 bg-gradient-to-b from-white/15 to-cyan-400/30"
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="w-1 h-1 rounded-full bg-cyan-400/40 my-0.5" />
+                <motion.div
+                  className="w-px h-3 bg-gradient-to-b from-cyan-400/30 to-cyan-400/10"
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                />
+              </div>
+              {/* Layer 2 — Future */}
+              <motion.div
+                variants={fadeUp}
+                className="relative p-4 rounded-b-xl border border-cyan-400/[0.14] bg-cyan-400/[0.025] overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent" />
+                <p className="font-mono text-[8px] tracking-[0.28em] text-cyan-400/50 uppercase mb-1.5">Layer 02 — Vision</p>
+                <p className="text-white/55 text-xs font-light leading-relaxed">
+                  Project XORA · Long-term AI Assistant Ecosystem · Future Innovation
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </section>
@@ -404,12 +455,86 @@ export default function About() {
           </motion.div>
 
           {/* XORA name badge */}
-          <motion.div variants={fadeUp} className="flex justify-center mb-16">
+          <motion.div variants={fadeUp} className="flex justify-center mb-10">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.04] border border-cyan-400/[0.18] backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-cyan-400/80 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
               <span className="font-mono text-xs tracking-[0.3em] uppercase text-white/70">
                 PROJECT XORA — LONG-TERM VISION
               </span>
+            </div>
+          </motion.div>
+
+          {/* XORA Command Center Visual */}
+          <motion.div variants={fadeUp} className="relative mx-auto w-full max-w-[420px] aspect-square mb-10 select-none">
+            {/* Outer ring — slowly rotating */}
+            <motion.div
+              className="absolute inset-0 rounded-full border border-cyan-400/[0.07]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Mid ring — counter-rotating */}
+            <motion.div
+              className="absolute inset-[52px] rounded-full border border-white/[0.05]"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Inner ring */}
+            <motion.div
+              className="absolute inset-[104px] rounded-full border border-cyan-400/[0.10]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            />
+
+            {/* Orbiting dot on outer ring */}
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+            </motion.div>
+            {/* Orbiting dot on mid ring — opposite direction */}
+            <motion.div
+              className="absolute inset-[52px] rounded-full"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-white/40 shadow-[0_0_4px_rgba(255,255,255,0.5)]" />
+            </motion.div>
+
+            {/* Capability chips at orbital positions */}
+            {xoraCommandChips.map((chip, i) => {
+              const angle = (i / xoraCommandChips.length) * 2 * Math.PI - Math.PI / 2;
+              const r = 42;
+              const cx = 50 + r * Math.cos(angle);
+              const cy = 50 + r * Math.sin(angle);
+              return (
+                <motion.div
+                  key={chip}
+                  className="absolute px-2 py-1 rounded-full bg-black/80 border border-white/[0.09] flex items-center gap-1.5 whitespace-nowrap backdrop-blur-sm"
+                  style={{ left: `${cx}%`, top: `${cy}%`, transform: "translate(-50%,-50%)" }}
+                  animate={{ opacity: [0.45, 0.9, 0.45] }}
+                  transition={{ duration: 2.5 + i * 0.35, repeat: Infinity, ease: "easeInOut", delay: i * 0.28 }}
+                >
+                  <div className="w-1 h-1 rounded-full bg-cyan-400/60 flex-shrink-0" />
+                  <span className="font-mono text-[8px] tracking-wider text-white/40">{chip}</span>
+                </motion.div>
+              );
+            })}
+
+            {/* Central XORA core */}
+            <div className="absolute inset-[132px] rounded-full">
+              <div className="w-full h-full rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.14),rgba(80,50,255,0.09),transparent_70%)] flex items-center justify-center relative">
+                <motion.div
+                  className="absolute inset-0 rounded-full border border-cyan-400/20"
+                  animate={{ boxShadow: ["0 0 12px rgba(6,182,212,0.08)", "0 0 28px rgba(6,182,212,0.22)", "0 0 12px rgba(6,182,212,0.08)"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="text-center z-10">
+                  <p className="font-mono text-[11px] tracking-[0.4em] text-cyan-400/70 uppercase">XORA</p>
+                  <p className="font-mono text-[7px] tracking-[0.2em] text-white/25 uppercase mt-0.5">AI AGENT</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

@@ -93,6 +93,33 @@ const fadeUp = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } }
 };
 
+const heroParticles = [
+  { x: 10, y: 20, size: 1.5, opacity: 0.25, dur: 5.2, delay: 0,   cyan: false },
+  { x: 26, y: 68, size: 1,   opacity: 0.18, dur: 7.1, delay: 1.2, cyan: false },
+  { x: 43, y: 14, size: 2,   opacity: 0.20, dur: 4.8, delay: 0.5, cyan: true  },
+  { x: 62, y: 73, size: 1.5, opacity: 0.22, dur: 6.4, delay: 2.1, cyan: false },
+  { x: 76, y: 28, size: 1,   opacity: 0.18, dur: 5.6, delay: 0.8, cyan: true  },
+  { x: 89, y: 57, size: 1.5, opacity: 0.20, dur: 8.2, delay: 1.5, cyan: false },
+  { x: 17, y: 83, size: 1,   opacity: 0.15, dur: 6.7, delay: 3.0, cyan: false },
+  { x: 55, y: 44, size: 2,   opacity: 0.12, dur: 9.1, delay: 0.3, cyan: true  },
+  { x: 83, y: 11, size: 1,   opacity: 0.18, dur: 5.0, delay: 2.5, cyan: false },
+  { x: 34, y: 37, size: 1.5, opacity: 0.15, dur: 7.3, delay: 1.0, cyan: true  },
+  { x: 71, y: 86, size: 1,   opacity: 0.20, dur: 4.2, delay: 0.7, cyan: false },
+  { x: 91, y: 39, size: 2,   opacity: 0.16, dur: 6.1, delay: 1.8, cyan: true  },
+];
+
+const cardGlows = [
+  "hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] hover:border-cyan-400/[0.20]",
+  "hover:shadow-[0_0_40px_rgba(139,92,246,0.12)] hover:border-purple-400/[0.15]",
+  "hover:shadow-[0_0_40px_rgba(255,255,255,0.06)]",
+];
+
+const serviceIcons = [
+  { icon: Film,     color: "text-white/25 group-hover:text-white/60",         glow: "group-hover:shadow-[0_0_10px_rgba(255,255,255,0.12)]",      border: "group-hover:border-white/20" },
+  { icon: Sparkles, color: "text-cyan-400/30 group-hover:text-cyan-400/70",   glow: "group-hover:shadow-[0_0_10px_rgba(6,182,212,0.30)]",        border: "group-hover:border-cyan-400/20" },
+  { icon: Zap,      color: "text-purple-400/30 group-hover:text-purple-400/70", glow: "group-hover:shadow-[0_0_10px_rgba(139,92,246,0.30)]",      border: "group-hover:border-purple-400/20" },
+];
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
@@ -173,6 +200,39 @@ export default function Home() {
         {/* Subtle mesh background */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
              style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+        {/* Pulsing AI glow orb */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full"
+          style={{ width: '800px', height: '800px' }}
+          animate={{ scale: [0.92, 1.08, 0.92], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="w-full h-full rounded-full" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.04) 0%, rgba(80,50,255,0.05) 45%, transparent 70%)' }} />
+        </motion.div>
+
+        {/* Floating particles */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {heroParticles.map((p, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                left: `${p.x}%`,
+                top: `${p.y}%`,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                background: p.cyan ? 'rgba(6,182,212,0.65)' : 'rgba(255,255,255,0.45)',
+                boxShadow: p.cyan ? '0 0 5px rgba(6,182,212,0.5)' : undefined,
+              }}
+              animate={{
+                y: [-10, 10, -10],
+                opacity: [p.opacity * 0.4, p.opacity, p.opacity * 0.4],
+              }}
+              transition={{ duration: p.dur, repeat: Infinity, delay: p.delay, ease: "easeInOut" }}
+            />
+          ))}
+        </div>
 
         <motion.div 
           style={{ opacity: heroOpacity, scale: heroScale }}
@@ -286,19 +346,36 @@ export default function Home() {
               We don't shoot ads. <br/><span className="text-white/40">We engineer them.</span>
             </h2>
 
-            {/* Cinematic accent visual */}
-            <div className="mt-10 relative overflow-hidden select-none">
-              <div className="flex flex-col gap-2">
-                {[0, 1, 2].map((i) => (
-                  <motion.div
-                    key={i}
-                    className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
-                    animate={{ opacity: [0.3, 1, 0.3], scaleX: [0.6, 1, 0.6] }}
-                    transition={{ duration: 3 + i * 0.8, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                  />
-                ))}
+            {/* Cinematic frame mockup */}
+            <div className="mt-10 relative max-w-[260px] select-none">
+              <div className="relative aspect-video rounded-lg overflow-hidden border border-white/[0.08] bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.04),transparent_70%)]">
+                {/* Corner accents */}
+                <div className="absolute top-2.5 left-2.5 w-4 h-4 border-t border-l border-white/25 pointer-events-none" />
+                <div className="absolute top-2.5 right-2.5 w-4 h-4 border-t border-r border-white/25 pointer-events-none" />
+                <div className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b border-l border-white/25 pointer-events-none" />
+                <div className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b border-r border-white/25 pointer-events-none" />
+                {/* Scan line */}
+                <motion.div
+                  className="absolute left-3 right-3 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent pointer-events-none"
+                  animate={{ top: ["12%", "85%", "12%"] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                />
+                {/* Center play icon */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center">
+                    <Play className="w-3.5 h-3.5 text-white/30 ml-0.5" fill="currentColor" />
+                  </div>
+                </div>
+                {/* Bottom info strip */}
+                <div className="absolute bottom-0 left-0 right-0 px-3 py-2 flex items-center justify-between">
+                  <span className="font-mono text-[7px] tracking-widest text-white/20 uppercase">AI Commercial</span>
+                  <div className="flex items-center gap-1">
+                    <div className="w-1 h-1 rounded-full bg-red-400/50 animate-pulse" />
+                    <span className="font-mono text-[7px] text-white/15">REC</span>
+                  </div>
+                </div>
               </div>
-              <p className="font-mono text-[9px] tracking-[0.3em] text-white/18 uppercase mt-4">
+              <p className="font-mono text-[8px] tracking-[0.25em] text-white/20 uppercase mt-3">
                 AI-directed · No camera crew required
               </p>
             </div>
@@ -370,8 +447,17 @@ export default function Home() {
                 className="group flex flex-col md:flex-row md:items-center py-10 md:py-12 border-b border-white/[0.06] hover:bg-white/[0.02] transition-colors duration-500 cursor-default px-4 -mx-4"
                 data-testid={`service-row-${i}`}
               >
-                <div className="w-16 md:w-32 mb-4 md:mb-0">
+                <div className="w-16 md:w-40 mb-4 md:mb-0 flex items-center gap-3">
                   <span className="font-mono text-sm text-white/20">{service.number}</span>
+                  {(() => {
+                    const vis = serviceIcons[i];
+                    const Icon = vis.icon;
+                    return (
+                      <div className={`w-8 h-8 rounded-lg border border-white/[0.07] flex items-center justify-center transition-all duration-500 ${vis.color} ${vis.glow} ${vis.border}`}>
+                        <Icon className="w-3.5 h-3.5" strokeWidth={1.2} />
+                      </div>
+                    );
+                  })()}
                 </div>
                 <div className="flex-1 md:pr-12">
                   <h3 className="text-2xl font-light tracking-wide mb-2">{service.title}</h3>
@@ -807,10 +893,10 @@ export default function Home() {
 
           {/* Cards */}
           <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6 mb-14">
-            {whyNexoraCards.map((card) => (
+            {whyNexoraCards.map((card, i) => (
               <div
                 key={card.title}
-                className="group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.07] backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] flex flex-col gap-6"
+                className={`group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.07] backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-500 flex flex-col gap-6 ${cardGlows[i]}`}
               >
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center group-hover:bg-white/[0.10] group-hover:border-white/[0.15] transition-all duration-500">
