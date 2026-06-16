@@ -1,0 +1,134 @@
+Create one new page for the Nexora Labs website.
+
+Page Name:
+About Nexora Labs
+
+Page URL:
+/about
+
+Navigation Label:
+About
+
+Purpose:
+This page explains what Nexora Labs is, the long-term vision of the company, and the future AI assistant vision called XORA.
+
+Important:
+
+* Do not remove or redesign the existing homepage.
+* Do not remove existing portfolio projects.
+* Do not change the contact section.
+* Keep the same dark luxury Nexora Labs design system.
+* Add only this new About page first.
+* Add the About link to the header navigation and footer navigation.
+* Make sure the page is responsive on desktop and mobile.
+
+Page Content:
+
+Hero Section
+
+Headline:
+About Nexora Labs
+
+Subtitle:
+Nexora Labs is an AI-focused digital lab built to explore the future of artificial intelligence, creative technology, frontend development, and intelligent digital systems.
+
+Add a premium futuristic robot / AI agent inspired visual element in the hero section.
+The visual should feel cinematic, modern, dark, elegant, and high-tech.
+It can be an abstract robot illustration, glowing AI orb, neural network visual, holographic assistant, or futuristic AI interface.
+Do not use childish cartoon style.
+
+Section 1:
+What is Nexora Labs?
+
+Nexora Labs is a future artificial intelligence company and digital innovation lab focused on building AI-powered tools, premium websites, intelligent assistants, and creative digital systems.
+
+The goal of Nexora Labs is to use artificial intelligence to help people move faster, think clearer, build better, and turn ideas into real digital products.
+
+Nexora Labs combines AI-assisted frontend development, creative direction, visual storytelling, automation, and experimental AI systems into one long-term vision.
+
+Section 2:
+Our Vision
+
+The vision of Nexora Labs is to build intelligent digital systems that make advanced technology easier for everyone to use.
+
+We believe that AI can help humans unlock ideas that were once difficult, expensive, or impossible to execute.
+
+Nexora Labs exists to explore a future where people can build websites, analyze information, create videos, design visuals, manage tasks, and make better decisions with the help of intelligent AI assistants.
+
+Section 3:
+Our Mission
+
+The mission of Nexora Labs is to:
+
+* Build useful AI-powered digital tools.
+* Create premium and responsive websites using AI-assisted frontend workflows.
+* Develop intelligent assistants that help users work smarter.
+* Explore AI systems for finance, business, coding, creativity, productivity, and research.
+* Make complex technology easier to understand and use.
+* Help people turn hidden ideas into real projects.
+* Build digital experiences that are modern, cinematic, and practical.
+
+Section 4:
+The XORA Vision
+
+XORA is the long-term AI assistant vision by Nexora Labs.
+
+XORA is imagined as a real-life intelligent assistant inspired by futuristic AI systems like Jarvis. The dream is to create an AI agent that can understand commands, analyze information, assist with daily work, and connect with digital devices.
+
+In the future, XORA is envisioned to help users with:
+
+* Finance analysis
+* Stock and crypto insights
+* Business planning
+* Coding and website development
+* Videography and video editing
+* AI image and animation generation
+* Research and learning
+* Smart home control
+* Computer and mobile device assistance
+* Content creation and uploading
+* Productivity and task management
+
+XORA is not only designed to answer questions. The long-term dream is for XORA to become a practical digital partner that can help users plan, analyze, build, edit, organize, and execute ideas.
+
+Section 5:
+Human Ideas, Amplified by AI
+
+Many people have powerful ideas, but they do not always have the tools, time, or technical skills to bring those ideas to life.
+
+Nexora Labs believes AI can change that.
+
+With the right AI assistant, ideas that once felt impossible can become possible. A person who cannot code can start building. A person who cannot edit videos can start creating. A person who cannot analyze complex data can start understanding it.
+
+Nexora Labs wants to be part of that future.
+
+Section 6:
+Current Status
+
+Nexora Labs and XORA are currently in the early development and concept stage.
+
+Project XORA is a long-term AI agent vision. It is not presented as a finished product yet. The project will be developed step by step through learning, experimentation, frontend development, AI workflows, automation, and future product development.
+
+Design Requirements:
+
+* Use dark luxury design.
+* Use premium glassmorphism cards.
+* Use subtle futuristic gradients.
+* Add AI/robot/neural network visual elements.
+* Add smooth animations and hover effects.
+* Keep the design consistent with the existing Nexora Labs website.
+* Make the page look like a premium AI company page.
+* Make it mobile responsive.
+* Keep all text readable.
+* Add a clear CTA button at the bottom:
+    Button text: Explore Portfolio
+    Button link: /#portfolio
+
+Technical Requirements:
+
+* Add routing for /about.
+* Add the About link to header navigation.
+* Add the About link to footer navigation.
+* Make sure the route works when opened directly.
+* Do not break the existing homepage.
+* After implementation, test the About page and report which files were changed.

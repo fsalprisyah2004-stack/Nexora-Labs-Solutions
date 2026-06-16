@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Link } from "wouter";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { 
   Film, 
@@ -131,16 +132,27 @@ export default function Home() {
           NEXORA AI STUDIO
         </a>
         <div className="hidden md:flex gap-8 items-center">
-          {navItems.map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`} 
-              data-testid={`nav-link-${item.toLowerCase()}`}
-              className="text-xs font-light uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300"
-            >
-              {item}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item === "About" ? (
+              <Link
+                key={item}
+                href="/about"
+                data-testid="nav-link-about"
+                className="text-xs font-light uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300"
+              >
+                {item}
+              </Link>
+            ) : (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                data-testid={`nav-link-${item.toLowerCase()}`}
+                className="text-xs font-light uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300"
+              >
+                {item}
+              </a>
+            )
+          )}
         </div>
         <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
           <Button 
@@ -966,11 +978,22 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-sm font-light tracking-widest uppercase">NEXORA AI STUDIO</div>
             <div className="flex gap-8">
-              {navItems.filter(i => i !== "Clients").map(item => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="text-xs text-white/40 hover:text-white uppercase tracking-widest transition-colors" data-testid={`footer-link-${item.toLowerCase()}`}>
-                  {item}
-                </a>
-              ))}
+              {navItems.filter(i => i !== "Clients").map(item =>
+                item === "About" ? (
+                  <Link
+                    key={item}
+                    href="/about"
+                    className="text-xs text-white/40 hover:text-white uppercase tracking-widest transition-colors"
+                    data-testid="footer-link-about"
+                  >
+                    {item}
+                  </Link>
+                ) : (
+                  <a key={item} href={`#${item.toLowerCase()}`} className="text-xs text-white/40 hover:text-white uppercase tracking-widest transition-colors" data-testid={`footer-link-${item.toLowerCase()}`}>
+                    {item}
+                  </a>
+                )
+              )}
             </div>
             <div className="flex gap-6">
               <a href="#" className="text-white/40 hover:text-white transition-colors" data-testid="footer-social-twitter"><Twitter className="w-4 h-4" /></a>
