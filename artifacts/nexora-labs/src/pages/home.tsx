@@ -285,13 +285,30 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight">
               We don't shoot ads. <br/><span className="text-white/40">We engineer them.</span>
             </h2>
+
+            {/* Cinematic accent visual */}
+            <div className="mt-10 relative overflow-hidden select-none">
+              <div className="flex flex-col gap-2">
+                {[0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+                    animate={{ opacity: [0.3, 1, 0.3], scaleX: [0.6, 1, 0.6] }}
+                    transition={{ duration: 3 + i * 0.8, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                  />
+                ))}
+              </div>
+              <p className="font-mono text-[9px] tracking-[0.3em] text-white/18 uppercase mt-4">
+                AI-directed · No camera crew required
+              </p>
+            </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="lg:col-span-7 flex flex-col gap-16">
             <div className="space-y-8 text-lg text-white/55 font-light leading-relaxed">
-              <p>Nexora AI Studio was built at the crossroads of machine learning and cinematic craft — because the future of advertising doesn't need a camera crew.</p>
-              <p>We train custom AI models on your brand's visual identity, then direct them like a Hollywood production house. The result is advertising that feels human, moves people, and gets made in days.</p>
-              <p>We work with a small number of ambitious clients each quarter. If you're here, you're probably the right fit.</p>
+              <p>Nexora AI Studio sits at the crossroads of machine intelligence and cinematic craft. We build AI-powered commercials, AI visuals, cinematic brand content, and premium frontend websites — without a camera crew.</p>
+              <p>Today, our work is practical: AI-generated commercials, visual campaigns, and digital brand experiences delivered in days. Each project proves that intelligence and creativity can replace the traditional production pipeline.</p>
+              <p>This studio work is the foundation. What we build today trains the tools, systems, and understanding we need to build the intelligent AI systems of tomorrow.</p>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-12 border-t border-white/[0.06]">
@@ -784,7 +801,7 @@ export default function Home() {
             <span className="font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase block mb-4">OUR APPROACH</span>
             <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-6">Why Nexora</h2>
             <p className="text-white/40 font-light text-lg max-w-xl mx-auto leading-relaxed">
-              AI-powered creative production for modern brands, visual campaigns, and cinematic digital content.
+              Real AI-powered creative work today. A foundation for intelligent systems tomorrow.
             </p>
           </motion.div>
 
@@ -812,6 +829,13 @@ export default function Home() {
                 <div className="h-px bg-white/[0.06] group-hover:bg-white/[0.14] transition-colors duration-500 w-full" />
               </div>
             ))}
+          </motion.div>
+
+          {/* Bridge statement */}
+          <motion.div variants={fadeUp} className="text-center mb-8 mt-2">
+            <p className="text-white/22 text-sm font-light italic tracking-wide max-w-lg mx-auto leading-relaxed">
+              "What we build today becomes the foundation for the intelligent systems we want to build tomorrow."
+            </p>
           </motion.div>
 
           {/* CTA to About page */}

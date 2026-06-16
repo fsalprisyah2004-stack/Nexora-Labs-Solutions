@@ -233,9 +233,8 @@ export default function About() {
             variants={fadeUp}
             className="text-white/40 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
           >
-            An AI-focused digital lab built to explore the future of artificial
-            intelligence, creative technology, frontend development, and
-            intelligent digital systems.
+            An AI-powered creative lab delivering real work today — and building
+            toward an intelligent AI assistant ecosystem tomorrow.
           </motion.p>
 
         </motion.div>
@@ -270,19 +269,19 @@ export default function About() {
           </motion.div>
           <motion.div variants={fadeUp} className="flex flex-col gap-5">
             <p className="text-white/50 font-light leading-relaxed">
-              Nexora Labs is a future artificial intelligence company and digital
-              innovation lab focused on building AI-powered tools, premium
-              websites, intelligent assistants, and creative digital systems.
+              Nexora Labs is an AI-focused digital lab operating on two connected
+              layers. The first is real, practical work happening now. The second
+              is a long-term vision being built toward.
             </p>
             <p className="text-white/50 font-light leading-relaxed">
-              The goal of Nexora Labs is to use artificial intelligence to help
-              people move faster, think clearer, build better, and turn ideas
-              into real digital products.
+              Today, Nexora AI Studio creates AI-powered commercials, AI visuals,
+              cinematic brand content, and premium frontend websites — real
+              deliverables built using AI-assisted production workflows.
             </p>
             <p className="text-white/50 font-light leading-relaxed">
-              Nexora Labs combines AI-assisted frontend development, creative
-              direction, visual storytelling, automation, and experimental AI
-              systems into one long-term vision.
+              These services are the current foundation. The long-term ambition
+              is Project XORA: an experimental AI assistant concept imagined to
+              help people work, create, analyze, and build more intelligently.
             </p>
           </motion.div>
         </motion.div>
@@ -309,18 +308,19 @@ export default function About() {
           </motion.div>
           <motion.div variants={fadeUp} className="md:order-1 flex flex-col gap-5">
             <p className="text-white/50 font-light leading-relaxed">
-              The vision of Nexora Labs is to build intelligent digital systems
-              that make advanced technology easier for everyone to use.
+              The vision of Nexora Labs is to evolve from a practical AI creative
+              studio into an AI innovation lab — and eventually, an intelligent
+              AI assistant ecosystem.
             </p>
             <p className="text-white/50 font-light leading-relaxed">
-              We believe that AI can help humans unlock ideas that were once
-              difficult, expensive, or impossible to execute.
+              Today, that vision is grounded in real work: AI commercials, visual
+              content, websites, and digital experiences that prove what
+              AI-assisted production can achieve.
             </p>
             <p className="text-white/50 font-light leading-relaxed">
-              Nexora Labs exists to explore a future where people can build
-              websites, analyze information, create videos, design visuals,
-              manage tasks, and make better decisions with the help of
-              intelligent AI assistants.
+              The long-term direction is toward Project XORA — a future where AI
+              can help anyone build, create, analyze, and make better decisions,
+              regardless of their technical background.
             </p>
           </motion.div>
         </motion.div>
@@ -370,8 +370,14 @@ export default function About() {
       {/* SECTION 4 — XORA Vision (full-width highlight) */}
       <section className="py-28 px-6 relative overflow-hidden">
         {/* Background accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(80,50,255,0.06),transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(6,182,212,0.05),rgba(80,50,255,0.05),transparent_65%)] pointer-events-none" />
         <div className="absolute inset-0 border-y border-white/[0.05] pointer-events-none" />
+        {/* Electric top accent */}
+        <motion.div
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent"
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
 
         <motion.div
           variants={staggerContainer}
@@ -399,13 +405,19 @@ export default function About() {
 
           {/* XORA name badge */}
           <motion.div variants={fadeUp} className="flex justify-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.04] border border-white/[0.10] backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-purple-400/70 animate-pulse" />
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.04] border border-cyan-400/[0.18] backdrop-blur-sm">
+              <div className="w-2 h-2 rounded-full bg-cyan-400/80 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
               <span className="font-mono text-xs tracking-[0.3em] uppercase text-white/70">
-                PROJECT XORA — IN DEVELOPMENT
+                PROJECT XORA — LONG-TERM VISION
               </span>
             </div>
           </motion.div>
+
+          {/* Electric divider */}
+          <motion.div
+            variants={fadeUp}
+            className="max-w-4xl mx-auto w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent mb-10"
+          />
 
           {/* Capabilities grid */}
           <motion.div
@@ -429,10 +441,19 @@ export default function About() {
             variants={fadeUp}
             className="text-center text-white/30 font-light text-sm max-w-xl mx-auto leading-relaxed"
           >
-            XORA is not only designed to answer questions. The long-term dream is
-            for XORA to become a practical digital partner that can help users
-            plan, analyze, build, edit, organize, and execute ideas.
+            XORA is a long-term concept — not a finished or launched product.
+            The vision is to develop XORA step by step into a practical digital
+            partner that can help users plan, analyze, build, edit, organize, and
+            execute ideas with the help of intelligent AI.
           </motion.p>
+          <motion.div variants={fadeUp} className="flex justify-center mt-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.07] bg-white/[0.02]">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-400/60 animate-pulse" />
+              <span className="font-mono text-[9px] tracking-widest uppercase text-white/30">
+                Concept Stage · Not Yet Launched
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -503,14 +524,20 @@ export default function About() {
               </span>
             </div>
             <p className="text-white/50 font-light leading-relaxed">
-              Nexora Labs and XORA are currently in the early development and
-              concept stage. Project XORA is a long-term AI agent vision — it is
-              not presented as a finished product yet.
+              Nexora AI Studio is actively building and delivering real projects:
+              AI-powered commercials, cinematic visual content, and premium
+              frontend websites for clients and brand campaigns.
             </p>
             <p className="text-white/50 font-light leading-relaxed">
-              The project will be developed step by step through learning,
-              experimentation, frontend development, AI workflows, automation,
-              and future product development.
+              Project XORA is a long-term AI assistant vision — not a finished
+              product. It is an experimental concept being developed step by step
+              through research, AI workflows, frontend engineering, and
+              automation work.
+            </p>
+            <p className="text-white/50 font-light leading-relaxed">
+              What we build for clients today and the tools we develop internally
+              are the foundation for the more ambitious intelligent systems we are
+              working toward.
             </p>
           </motion.div>
         </motion.div>

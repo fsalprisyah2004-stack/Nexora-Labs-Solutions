@@ -1,0 +1,163 @@
+Refine the Nexora Labs website so the overall topic, story, visuals, and animations feel more connected, premium, and coherent.
+
+Main Goal:
+The website currently feels slightly disconnected because it talks about AI commercial / AI video, then moves into the future AI assistant vision called XORA. Please make the full website narrative feel aligned and intentional.
+
+Important:
+
+* Do NOT redesign the website from scratch.
+* Do NOT change the original dark luxury Nexora Labs design system.
+* Do NOT remove the existing portfolio projects.
+* Do NOT change the WhatsApp, Instagram, TikTok, or YouTube links.
+* Do NOT create a second new page.
+* Keep everything focused inside the existing homepage and About page.
+* Keep the website premium, cinematic, modern, and professional.
+
+Core Brand Story:
+Nexora Labs should be presented as an AI-powered digital lab with two connected layers:
+
+1. Current Execution Layer:
+    Nexora AI Studio currently creates AI-powered commercials, AI visuals, cinematic content, frontend websites, digital brand experiences, and portfolio projects.
+2. Future Innovation Layer:
+    Project XORA is the long-term AI assistant vision by Nexora Labs. XORA is imagined as a future AI agent that can help people work, create, analyze, automate, and interact with technology more easily.
+
+Make the website story flow like this:
+Current AI studio work → portfolio proof → brand purpose → future XORA vision.
+
+The website should not feel like random topics. It should feel like one journey:
+“What we build today becomes the foundation for the intelligent systems we want to build tomorrow.”
+
+Content Alignment Requirements:
+
+* Refine the homepage copy so AI commercials, AI visuals, frontend websites, and Project XORA feel connected.
+* Make it clear that AI video and AI commercial work are Nexora’s current practical foundation.
+* Make it clear that XORA is the future long-term AI assistant vision, not a finished product yet.
+* Add short bridge sentences between sections so the story flows naturally.
+* Make the About page explain that Nexora Labs is starting with real AI-powered services now while building toward a future AI assistant ecosystem.
+
+Suggested narrative meaning:
+
+* Today, Nexora builds AI-powered visuals, commercials, websites, and digital experiences.
+* These works are the foundation for future AI innovation.
+* Project XORA represents the long-term dream of building a practical AI assistant agent.
+* XORA is not a finished product yet. It is a long-term concept and experimental AI agent vision.
+
+Visual Requirements:
+Add relevant visuals to make the website more engaging and less text-heavy.
+
+Each major topic should have a matching visual:
+
+* AI commercial / AI video sections should use cinematic AI commercial visuals or motion accents.
+* Frontend / website development sections should use digital interface, dashboard, code, or screen-inspired visuals.
+* Project XORA / AI assistant sections should use futuristic AI robot, holographic assistant, AI orb, neural network, or smart assistant interface visuals.
+
+Important visual style:
+
+* Premium
+* Cinematic
+* Futuristic
+* Dark luxury
+* Clean and modern
+* Not childish
+* Not random stock-looking images
+* Relevant to each section topic
+
+Animation Requirements:
+Add tasteful animations and motion effects so visitors do not get bored reading only text.
+
+Use lightweight premium animations such as:
+
+* fade-in on scroll
+* smooth section reveal
+* subtle upward motion
+* animated blue/cyan gradients
+* soft glowing particles
+* electric blue AI glow accents
+* micro-hover effects on buttons and cards
+* subtle light streaks
+* holographic UI motion
+* soft pulsing AI orb
+* elegant portfolio hover animation
+
+Topic-specific animation direction:
+
+* AI commercial sections: cinematic reveal, subtle moving light, premium motion.
+* Frontend / website sections: interface-inspired motion, screen glow, code/digital UI feeling.
+* Project XORA section: futuristic AI assistant motion, electric blue glow, holographic robot/assistant feeling.
+
+Animation rules:
+
+* Keep animations smooth and premium.
+* Do not make the website too busy.
+* Do not add messy looping lines.
+* Avoid heavy animations that slow down the website.
+* Animations must work well on mobile.
+* If video animation is too heavy, use static visuals with elegant motion overlays instead.
+
+Homepage CTA Requirements:
+
+* Keep only one main hero CTA button: “Discover the Vision”.
+* The button should link to /about.
+* Make the button premium and futuristic with subtle blue electric AI glow.
+* Keep the header “Book a Discovery Call” button unchanged.
+* Do not duplicate the discovery call button in the hero section.
+
+About Page Navigation:
+
+* Add a small premium back icon in the top-left area of the About page if needed.
+* Make the top-left “NEXORA AI STUDIO” logo/text clickable on all pages and link it to /.
+* Do not use a large “Back to Home” text button.
+
+About Page Content Refinement:
+Make the About page clearly explain:
+
+* What Nexora Labs is
+* What Nexora AI Studio currently builds
+* How AI commercials, visuals, websites, and digital experiences are connected
+* How Project XORA fits into the long-term vision
+* Why XORA is a future AI assistant vision, not a finished product yet
+
+Project XORA Positioning:
+Project XORA should be described as:
+A long-term AI assistant vision by Nexora Labs.
+
+XORA may support users in the future with:
+
+* Finance
+* Stocks and crypto
+* Business planning
+* Coding
+* Website development
+* Videography
+* Video editing
+* AI image generation
+* Animation
+* Research
+* Learning
+* Productivity
+* Smart home control
+* Computer and mobile assistance
+
+But make sure the website does not claim XORA is already launched or fully working.
+
+Final Quality Check:
+After implementation, test:
+
+1. Homepage story flow feels connected.
+2. About page story flow feels connected.
+3. “Discover the Vision” opens /about.
+4. Top-left logo opens /.
+5. Visuals match the topic of each section.
+6. Animations feel premium and not distracting.
+7. Mobile layout is clean.
+8. Existing portfolio projects are not broken.
+9. Social media and WhatsApp links still work.
+10. There are no console errors.
+
+After implementation, report:
+
+1. Which sections were refined
+2. Which visuals were added or improved
+3. Which animations were added
+4. How the website narrative was made more coherent
+5. Which files were changed
