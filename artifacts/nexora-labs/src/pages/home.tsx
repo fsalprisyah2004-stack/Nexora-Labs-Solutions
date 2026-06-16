@@ -223,38 +223,42 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
-            <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
-              <Button 
+            <a
+              href="https://wa.me/628127578986"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <button
                 data-testid="hero-cta"
-                className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white hover:text-black h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/25 bg-white/[0.06] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
               >
-                Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+                Book a Discovery Call
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </button>
             </a>
 
-            <Link href="/about">
+            <Link href="/about" className="w-full sm:w-auto">
               <button
                 data-testid="hero-vision-cta"
-                className="group relative rounded-full h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 flex items-center gap-2 border border-white/[0.12] bg-white/[0.03] backdrop-blur-sm hover:bg-white/[0.08] hover:border-white/25 hover:shadow-[0_0_30px_rgba(120,100,255,0.12)] text-white/70 hover:text-white"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/[0.10] bg-transparent backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/20 hover:shadow-[0_0_24px_rgba(120,100,255,0.12)] transition-all duration-500 text-white/55 hover:text-white"
               >
                 Discover the Vision
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
               </button>
             </Link>
           </motion.div>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-5 flex items-center gap-2 text-white/20 text-[10px] font-mono tracking-widest uppercase"
+            transition={{ duration: 0.8, delay: 1.15 }}
+            className="mt-4 text-white/20 text-[10px] font-mono tracking-[0.25em] uppercase"
           >
-            <span className="w-3 h-px bg-white/20" />
             AI Vision · Project XORA · Future Digital Lab
-            <span className="w-3 h-px bg-white/20" />
-          </motion.div>
+          </motion.p>
         </motion.div>
 
         {/* Scroll Indicator */}

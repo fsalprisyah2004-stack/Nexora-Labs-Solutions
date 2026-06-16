@@ -1,0 +1,67 @@
+Fix the homepage CTA button alignment and About page navigation.
+
+Current issues:
+
+1. The animated line between the “Book a Discovery Call” button and the “Discover the Vision” button is not aligned properly.
+2. The line animation keeps repeating and makes the hero section look unpolished.
+3. The “Book a Discovery Call” and “Discover the Vision” buttons do not look visually consistent.
+4. The About page does not have a clear button that allows visitors to go back to the homepage.
+
+Please fix these issues carefully without redesigning the whole website.
+
+Homepage CTA Fix:
+
+* Make the “Book a Discovery Call” and “Discover the Vision” buttons visually consistent.
+* Both buttons should have the same height, same border radius, same padding, same font size, same letter spacing, and same alignment.
+* Keep the luxury dark glassmorphism button style.
+* Make both buttons feel like they belong to the same design system.
+* The white border/glow intensity should be balanced between both buttons.
+* Make the buttons horizontally aligned and centered properly on desktop.
+* On mobile, stack the buttons vertically with equal width and spacing.
+
+Animated Line Fix:
+
+* Fix the line between the two CTA buttons so it is perfectly aligned and does not look broken.
+* If the animated line cannot be aligned cleanly, remove it.
+* The animation should only play once when the hero section loads, then stop in a clean aligned position.
+* Do not make the line animation loop forever.
+* Avoid distracting motion.
+* The final visual should look premium, calm, and polished.
+* If needed, replace the animated line with a subtle static divider or remove it entirely.
+
+About Page Back Button:
+
+* Add a clear button on the About page that lets visitors return to the homepage.
+* Button text:
+    Back to Home
+* Button link:
+    /
+* Place this button near the top of the About page, preferably under the hero subtitle or near the main CTA area.
+* Also add another “Back to Home” button near the bottom of the About page after the final section.
+* Style the button consistently with the Nexora Labs dark luxury design system.
+* Add a subtle arrow icon if available.
+
+Navigation Consistency:
+
+* Make sure the header navigation still works.
+* Make sure the “About” link goes to /about.
+* Make sure the “Discover the Vision” button goes to /about.
+* Make sure the “Back to Home” button goes to /.
+* Do not remove portfolio projects.
+* Do not change WhatsApp, Instagram, TikTok, or YouTube links.
+* Do not change the main content of the About page.
+* Only fix alignment, animation behavior, CTA consistency, and navigation.
+
+After fixing, test:
+
+1. Homepage CTA buttons alignment on desktop.
+2. Homepage CTA buttons alignment on mobile.
+3. “Discover the Vision” button opens /about.
+4. “Back to Home” button opens /.
+5. Header About link works.
+6. Footer About link works.
+7. No broken layout.
+8. No looping distracting animation.
+9. No console errors.
+
+After implementation, report which files were changed.
