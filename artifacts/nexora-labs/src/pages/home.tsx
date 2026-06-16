@@ -223,42 +223,37 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
+            className="flex flex-col items-center gap-5"
           >
-            <a
-              href="https://wa.me/628127578986"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
-              <button
-                data-testid="hero-cta"
-                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-10 text-xs tracking-[0.2em] uppercase font-light border border-white/20 bg-white/[0.05] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
-              >
-                Book a Discovery Call
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-            </a>
-
             <Link href="/about" className="w-full sm:w-auto">
               <button
                 data-testid="hero-vision-cta"
-                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-10 text-xs tracking-[0.2em] uppercase font-light border border-white/20 bg-white/[0.05] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
+                className="group relative w-full sm:w-auto flex items-center justify-center gap-3 rounded-full h-14 px-12 text-sm tracking-[0.18em] uppercase font-light transition-all duration-500 text-white
+                  border border-cyan-400/30 bg-[linear-gradient(135deg,rgba(6,182,212,0.08),rgba(99,102,241,0.06))] backdrop-blur-sm
+                  hover:border-cyan-400/60 hover:bg-[linear-gradient(135deg,rgba(6,182,212,0.15),rgba(99,102,241,0.12))]
+                  hover:shadow-[0_0_32px_rgba(6,182,212,0.25),0_0_64px_rgba(99,102,241,0.12)]
+                  hover:scale-[1.02]"
               >
+                {/* Inner shimmer line */}
+                <span className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+                  <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ background: "linear-gradient(90deg, transparent 0%, rgba(6,182,212,0.12) 50%, transparent 100%)" }} />
+                </span>
+
                 Discover the Vision
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-cyan-400/70 group-hover:text-cyan-300" />
               </button>
             </Link>
-          </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.15 }}
-            className="mt-4 text-white/20 text-[10px] font-mono tracking-[0.25em] uppercase"
-          >
-            AI Vision · Project XORA · Future Digital Lab
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.15 }}
+              className="text-white/20 text-[10px] font-mono tracking-[0.25em] uppercase"
+            >
+              AI Vision · Project XORA · Future Digital Lab
+            </motion.p>
+          </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}

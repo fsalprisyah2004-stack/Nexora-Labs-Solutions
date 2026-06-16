@@ -1,0 +1,63 @@
+Refine the Nexora Labs homepage hero CTA section.
+
+Current issue:
+There are too many “Book a Discovery Call” buttons on the page. The button already exists in the top-right header, so the homepage hero section does not need another “Book a Discovery Call” button.
+
+Please update the homepage hero section.
+
+Main changes:
+
+1. Remove the “Book a Discovery Call” button from the hero section only.
+2. Keep the “Book a Discovery Call” button in the top-right header.
+3. Keep only one main hero CTA button:
+    “Discover the Vision”
+4. The “Discover the Vision” button should link to /about.
+
+Hero CTA Design:
+
+* Make “Discover the Vision” the main visual focus of the hero section.
+* Make the button larger, premium, and more eye-catching.
+* Add a futuristic blue electric AI glow effect.
+* Use subtle blue/cyan gradients.
+* Add a soft neon border glow.
+* Add a small arrow icon aligned properly.
+* Add smooth hover animation:
+    * slight glow increase
+    * subtle scale-up
+    * blue electric shimmer effect
+* Keep the animation premium and not too distracting.
+* Do not use looping messy lines around the button.
+* The final look should feel like a luxury AI company CTA button.
+
+Button text:
+Discover the Vision
+
+Optional small label under the button:
+AI Vision • Project XORA • Future Digital Lab
+
+Layout:
+
+* Center the “Discover the Vision” button cleanly in the hero section.
+* Make sure spacing looks balanced after removing the other hero button.
+* On mobile, make the button full-width or near full-width with proper padding.
+* Keep the hero section clean, premium, cinematic, and futuristic.
+
+Do not change:
+
+* Header “Book a Discovery Call” button
+* WhatsApp link
+* Portfolio projects
+* Social media links
+* About page content
+* Overall Nexora Labs dark luxury design
+
+Test after changes:
+
+1. Header “Book a Discovery Call” still works.
+2. Hero “Discover the Vision” goes to /about.
+3. The hero section looks balanced with only one CTA button.
+4. The blue electric AI glow looks premium, not childish.
+5. Mobile layout is clean.
+6. No console errors.
+
+After implementation, report which files were changed.
