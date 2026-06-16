@@ -1,0 +1,47 @@
+Refine the About Nexora Labs page navigation and positioning.
+
+Current issue:
+On the About page, there is no clear way for visitors to return to the homepage. I do not want a large “Back to Home” text button. I want a clean, premium back navigation in the top-left area.
+
+Please fix only this.
+
+Navigation Fix:
+
+* Add a small premium back icon button in the top-left area of the About page header.
+* The button should be subtle, minimal, and elegant.
+* Use a left arrow icon if available.
+* The button should link to /.
+* Do not use the text “Back to Home” as a large button.
+* The top-left “NEXORA AI STUDIO” logo/text should also be clickable and link to /.
+* Add a subtle hover effect for both the logo and the back icon.
+* Keep the design clean and premium.
+
+Content Positioning Fix:
+
+* Make the About page explain clearly that Nexora Labs has two layers:
+    1. The current creative studio layer: AI commercials, AI visuals, frontend websites, and digital portfolio projects.
+    2. The long-term vision layer: Project XORA, an AI assistant agent vision by Nexora Labs.
+* Do not make it sound like XORA is already a finished product.
+* Make it clear that XORA is a long-term AI agent vision.
+* Keep the content professional, futuristic, and honest.
+
+Important:
+
+* Do not create a second new page.
+* Do not add another separate Project XORA page.
+* Keep everything inside the existing /about page.
+* Do not remove homepage portfolio projects.
+* Do not change WhatsApp, Instagram, TikTok, or YouTube links.
+* Do not change the existing homepage layout except if needed for navigation consistency.
+* Keep the dark luxury Nexora Labs design system.
+
+Test after changes:
+
+1. Open /about.
+2. Click the small top-left back icon → should go to /.
+3. Click the “NEXORA AI STUDIO” logo/text → should go to /.
+4. Open homepage and click “Discover the Vision” → should go to /about.
+5. Check mobile responsiveness.
+6. Confirm there are no console errors.
+
+After implementation, report which files were changed.

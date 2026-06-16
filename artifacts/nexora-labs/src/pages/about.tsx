@@ -6,6 +6,7 @@ import {
   Linkedin,
   Instagram,
   ArrowRight,
+  ArrowLeft,
   Sparkles,
   Zap,
   Brain,
@@ -114,9 +115,18 @@ export default function About() {
             : "bg-transparent border-transparent"
         }`}
       >
-        <Link href="/" className="text-sm font-light tracking-widest uppercase">
-          NEXORA AI STUDIO
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/[0.10] text-white/30 hover:text-white hover:border-white/25 hover:bg-white/[0.05] transition-all duration-300"
+            aria-label="Back to homepage"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-0.5" />
+          </Link>
+          <Link href="/" className="text-sm font-light tracking-widest uppercase hover:text-white/70 transition-colors duration-300">
+            NEXORA AI STUDIO
+          </Link>
+        </div>
         <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => (
             <NavLink key={item} item={item} />
