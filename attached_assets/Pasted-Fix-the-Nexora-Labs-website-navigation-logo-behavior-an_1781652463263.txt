@@ -1,0 +1,72 @@
+Fix the Nexora Labs website navigation logo behavior and homepage CTA button consistency.
+
+Current issues:
+
+1. On the About page, there is a “Back to Home” button. I do not want this button.
+2. I want the Nexora AI Studio logo/text in the top-left header to act as the back-to-home link.
+3. On the homepage hero section, the two CTA buttons are not visually consistent:
+    * “Book a Discovery Call”
+    * “Discover the Vision”
+4. The “Discover the Vision” button looks smaller/different than the “Book a Discovery Call” button.
+5. Both buttons are side by side, so they must look perfectly matching.
+
+Please fix these issues only.
+
+Header Logo Fix:
+
+* Remove the visible “Back to Home” button from the About page hero section.
+* Remove the bottom “Back to Home” button from the About page if it exists.
+* Make the top-left “NEXORA AI STUDIO” logo/text clickable on all pages.
+* When users click the top-left logo/text, it should navigate to the homepage /.
+* Keep the logo/text in the same position and same design style.
+* Add cursor pointer and subtle hover effect to show it is clickable.
+* Do not add a new back button.
+
+Homepage CTA Button Fix:
+
+* Make the “Book a Discovery Call” and “Discover the Vision” buttons exactly consistent.
+* Both buttons must have:
+    * same width
+    * same height
+    * same padding
+    * same border radius
+    * same font size
+    * same letter spacing
+    * same border thickness
+    * same text alignment
+    * same arrow icon alignment
+    * same glow intensity
+    * same hover animation
+* Keep both buttons horizontally aligned on desktop.
+* On mobile, stack both buttons vertically with equal width and equal spacing.
+* Make the two buttons feel like one unified premium CTA button system.
+* The “Book a Discovery Call” button should still link to WhatsApp / discovery call.
+* The “Discover the Vision” button should still link to /about.
+
+Animation / Divider Fix:
+
+* Remove any distracting or misaligned animated line between the two buttons.
+* If there is any looping line animation around or between the CTA buttons, remove it.
+* Keep the hero section clean, premium, calm, and polished.
+* Do not use looping animation that makes the buttons look unbalanced.
+
+Do not change:
+
+* Existing homepage content
+* Existing portfolio projects
+* Existing social media links
+* Existing WhatsApp link
+* Existing About page text content
+* Overall Nexora Labs dark luxury design system
+
+After fixing, test:
+
+1. Click the top-left Nexora AI Studio logo on homepage → should stay/go to /.
+2. Click the top-left Nexora AI Studio logo on About page → should go to /.
+3. Click “Discover the Vision” → should go to /about.
+4. Click “Book a Discovery Call” → should keep working.
+5. Check that both homepage CTA buttons have the same size and style.
+6. Check mobile responsiveness.
+7. Confirm there are no console errors.
+
+After implementation, report which files were changed.

@@ -228,14 +228,6 @@ export default function About() {
             intelligent digital systems.
           </motion.p>
 
-          <motion.div variants={fadeUp}>
-            <Link href="/">
-              <button className="group flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/[0.10] bg-transparent hover:bg-white/[0.05] hover:border-white/20 transition-all duration-400 text-white/40 hover:text-white/80">
-                <ArrowRight className="w-3.5 h-3.5 rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />
-                <span className="text-[11px] font-light tracking-[0.2em] uppercase">Back to Home</span>
-              </button>
-            </Link>
-          </motion.div>
         </motion.div>
 
         {/* Scroll indicator */}
@@ -534,20 +526,15 @@ export default function About() {
             See our AI-powered commercials, brand campaigns, and cinematic
             digital content.
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <a href="/#portfolio">
-              <button className="group flex items-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/25 bg-white/[0.06] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white">
-                Explore Portfolio
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-            </a>
-            <Link href="/">
-              <button className="group flex items-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/[0.10] bg-transparent hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500 text-white/55 hover:text-white">
-                <ArrowRight className="w-3.5 h-3.5 rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />
-                Back to Home
-              </button>
-            </Link>
-          </div>
+          <a href="/#portfolio">
+            <Button
+              variant="outline"
+              className="rounded-full border-white/20 hover:bg-white hover:text-black text-xs px-8 h-11 font-light tracking-widest uppercase bg-transparent transition-all gap-2"
+            >
+              Explore Portfolio
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Button>
+          </a>
         </motion.div>
       </section>
 

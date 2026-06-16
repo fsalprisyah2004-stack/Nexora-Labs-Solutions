@@ -128,9 +128,9 @@ export default function Home() {
           scrolled ? "bg-black/60 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent border-transparent"
         }`}
       >
-        <a href="#" data-testid="nav-logo" className="text-sm font-light tracking-widest uppercase">
+        <Link href="/" data-testid="nav-logo" className="text-sm font-light tracking-widest uppercase cursor-pointer hover:text-white/70 transition-colors duration-300">
           NEXORA AI STUDIO
-        </a>
+        </Link>
         <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item) =>
             item === "About" ? (
@@ -233,7 +233,7 @@ export default function Home() {
             >
               <button
                 data-testid="hero-cta"
-                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/25 bg-white/[0.06] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-10 text-xs tracking-[0.2em] uppercase font-light border border-white/20 bg-white/[0.05] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
               >
                 Book a Discovery Call
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -243,7 +243,7 @@ export default function Home() {
             <Link href="/about" className="w-full sm:w-auto">
               <button
                 data-testid="hero-vision-cta"
-                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-8 text-xs tracking-[0.2em] uppercase font-light border border-white/[0.10] bg-transparent backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/20 hover:shadow-[0_0_24px_rgba(120,100,255,0.12)] transition-all duration-500 text-white/55 hover:text-white"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded-full h-12 px-10 text-xs tracking-[0.2em] uppercase font-light border border-white/20 bg-white/[0.05] backdrop-blur-sm hover:bg-white hover:text-black hover:border-white transition-all duration-500 text-white"
               >
                 Discover the Vision
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
