@@ -223,6 +223,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
             <a href="https://wa.me/628127578986" target="_blank" rel="noopener noreferrer">
               <Button 
@@ -232,6 +233,27 @@ export default function Home() {
                 Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </a>
+
+            <Link href="/about">
+              <button
+                data-testid="hero-vision-cta"
+                className="group relative rounded-full h-14 px-8 text-sm tracking-widest uppercase font-light transition-all duration-500 flex items-center gap-2 border border-white/[0.12] bg-white/[0.03] backdrop-blur-sm hover:bg-white/[0.08] hover:border-white/25 hover:shadow-[0_0_30px_rgba(120,100,255,0.12)] text-white/70 hover:text-white"
+              >
+                Discover the Vision
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </button>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-5 flex items-center gap-2 text-white/20 text-[10px] font-mono tracking-widest uppercase"
+          >
+            <span className="w-3 h-px bg-white/20" />
+            AI Vision · Project XORA · Future Digital Lab
+            <span className="w-3 h-px bg-white/20" />
           </motion.div>
         </motion.div>
 
@@ -768,7 +790,7 @@ export default function Home() {
           </motion.div>
 
           {/* Cards */}
-          <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6">
+          <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6 mb-14">
             {whyNexoraCards.map((card) => (
               <div
                 key={card.title}
@@ -791,6 +813,22 @@ export default function Home() {
                 <div className="h-px bg-white/[0.06] group-hover:bg-white/[0.14] transition-colors duration-500 w-full" />
               </div>
             ))}
+          </motion.div>
+
+          {/* CTA to About page */}
+          <motion.div variants={fadeUp} className="flex flex-col items-center gap-3 pt-2">
+            <Link href="/about">
+              <button className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/[0.12] bg-white/[0.03] backdrop-blur-sm hover:bg-white/[0.07] hover:border-white/20 transition-all duration-400 hover:shadow-[0_0_24px_rgba(100,80,255,0.10)]">
+                <Sparkles className="w-3.5 h-3.5 text-white/40 group-hover:text-white/70 transition-colors" strokeWidth={1.3} />
+                <span className="text-xs font-light tracking-[0.2em] uppercase text-white/50 group-hover:text-white/80 transition-colors">
+                  Discover the Vision
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-white/60 transition-all duration-300 group-hover:translate-x-0.5" />
+              </button>
+            </Link>
+            <p className="text-white/25 text-[11px] font-light tracking-wide">
+              Explore the future of Nexora Labs and Project XORA.
+            </p>
           </motion.div>
         </motion.div>
       </section>
