@@ -161,7 +161,16 @@ export default function About() {
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
         {/* Background radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(80,60,255,0.07),transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(80,60,255,0.09),transparent_65%)] pointer-events-none" />
+        {/* Cyan right-side accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_30%,rgba(6,182,212,0.06),transparent_50%)] pointer-events-none" />
+        {/* Deep blue bottom-left */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_70%,rgba(30,58,138,0.08),transparent_50%)] pointer-events-none" />
+        {/* Faint electric accent lines */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[35%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.06] to-transparent ambient-pulse" />
+          <div className="absolute top-[62%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/[0.04] to-transparent ambient-pulse" style={{ animationDelay: "4s" }} />
+        </div>
 
         {/* AI VISUAL — glowing orb + rings */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none select-none">
@@ -262,7 +271,11 @@ export default function About() {
       </section>
 
       {/* SECTION 1 — What is Nexora Labs */}
-      <section className="py-28 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full blur-[120px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.038), transparent 70%)' }} />
+          <div className="absolute bottom-0 left-0 w-[420px] h-[320px] rounded-full blur-[100px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(30,58,138,0.055), transparent 70%)', animationDelay: "6s" }} />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -338,10 +351,14 @@ export default function About() {
         </motion.div>
       </section>
 
-      <div className="w-full h-px bg-white/[0.05]" />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400/[0.12] to-transparent" />
 
       {/* SECTION 2 — Our Vision */}
-      <section className="py-28 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/3 left-0 w-[480px] h-[380px] rounded-full blur-[115px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.04), transparent 70%)', animationDelay: "2s" }} />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[300px] rounded-full blur-[100px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(80,50,255,0.04), transparent 70%)', animationDelay: "7s" }} />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -377,10 +394,13 @@ export default function About() {
         </motion.div>
       </section>
 
-      <div className="w-full h-px bg-white/[0.05]" />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400/[0.12] to-transparent" />
 
       {/* SECTION 3 — Our Mission */}
-      <section className="py-28 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/2 right-1/4 w-[450px] h-[350px] rounded-full blur-[110px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.035), transparent 70%)', animationDelay: "3s" }} />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -421,7 +441,14 @@ export default function About() {
       {/* SECTION 4 — XORA Vision (full-width highlight) */}
       <section className="py-28 px-6 relative overflow-hidden">
         {/* Background accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(6,182,212,0.05),rgba(80,50,255,0.05),transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(6,182,212,0.07),rgba(80,50,255,0.06),transparent_65%)] pointer-events-none" />
+        {/* Extra corner glows */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.12] to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.08] to-transparent" />
+          <div className="absolute top-0 left-0 w-[300px] h-[300px] rounded-full blur-[90px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.04), transparent 70%)' }} />
+          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full blur-[90px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(80,50,255,0.05), transparent 70%)', animationDelay: "5s" }} />
+        </div>
         <div className="absolute inset-0 border-y border-white/[0.05] pointer-events-none" />
         {/* Electric top accent */}
         <motion.div
@@ -583,7 +610,11 @@ export default function About() {
       </section>
 
       {/* SECTION 5 — Human Ideas Amplified */}
-      <section className="py-28 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/4 right-0 w-[460px] h-[360px] rounded-full blur-[115px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.036), transparent 70%)', animationDelay: "1s" }} />
+          <div className="absolute bottom-1/4 left-0 w-[380px] h-[300px] rounded-full blur-[100px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(30,58,138,0.05), transparent 70%)', animationDelay: "8s" }} />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -618,10 +649,13 @@ export default function About() {
         </motion.div>
       </section>
 
-      <div className="w-full h-px bg-white/[0.05]" />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400/[0.12] to-transparent" />
 
       {/* SECTION 6 — Current Status */}
-      <section className="py-28 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[130px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.04), rgba(30,58,138,0.04), transparent 70%)', animationDelay: "2s" }} />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -670,7 +704,9 @@ export default function About() {
 
       {/* CTA */}
       <section className="py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(60,40,220,0.05),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(60,40,220,0.07),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_30%,rgba(6,182,212,0.05),transparent_55%)] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.10] to-transparent pointer-events-none" />
         <motion.div
           initial="hidden"
           whileInView="visible"

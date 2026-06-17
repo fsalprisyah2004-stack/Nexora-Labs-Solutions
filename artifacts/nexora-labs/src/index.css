@@ -238,6 +238,29 @@
     animation: marquee 20s linear infinite;
   }
 
+  @keyframes ambientPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  @keyframes slowDrift {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(-10px) translateX(5px); }
+    66% { transform: translateY(6px) translateX(-7px); }
+  }
+  @keyframes techLineFade {
+    0%, 100% { opacity: 0.3; scaleX: 0.7; }
+    50% { opacity: 1; scaleX: 1; }
+  }
+  .ambient-pulse {
+    animation: ambientPulse 10s ease-in-out infinite;
+  }
+  .slow-drift {
+    animation: slowDrift 22s ease-in-out infinite;
+  }
+  .ambient-pulse-fast {
+    animation: ambientPulse 5s ease-in-out infinite;
+  }
+
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;

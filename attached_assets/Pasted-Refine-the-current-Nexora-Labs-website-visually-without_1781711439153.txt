@@ -1,0 +1,50 @@
+Refine the current Nexora Labs website visually without changing the structure, layout, text content, navigation, buttons, links, or functionality.
+
+Important rules:
+- Do NOT remove or rename any section
+- Do NOT change button text, routes, destinations, or behavior
+- Do NOT change the overall layout or spacing drastically
+- Do NOT replace the existing design style
+- This is only a visual enhancement pass
+
+Goal:
+Make the website feel slightly more colorful, premium, and futuristic, while keeping the same dark aesthetic. The current site is too black/plain, so add subtle blue technology vibes across all pages.
+
+What to improve:
+1. Add subtle blue/cyan futuristic glow accents across the website
+2. Enhance the background with soft AI-tech visual atmosphere:
+   - faint electric blue gradients
+   - subtle glowing lines
+   - soft grid illumination
+   - abstract tech energy accents
+   - very subtle digital/lightning/electric effects
+3. Keep the background elegant and premium, not noisy or childish
+4. Apply these enhancements consistently on all pages/sections
+5. Make sure each page feels more alive, but still clean and professional
+6. Preserve readability — text must remain easy to read
+7. Preserve all existing buttons exactly as they are
+8. Preserve all current animations, but add only subtle supporting ambient motion if needed
+9. Do not overdo the colors — focus on dark navy, deep blue, cyan glow, and soft futuristic lighting
+10. Add subtle section-level visual depth so each block feels more dimensional
+
+Suggested visual direction:
+- dark base remains
+- overlay soft blue radial glows
+- subtle animated glow particles or tech lines in the background
+- slight glass/futuristic lighting feel
+- premium AI / cinematic technology atmosphere
+
+Where to apply:
+- homepage hero background
+- about page background
+- section dividers
+- card backgrounds or borders (very subtle glow only)
+- hover states can have a slightly richer blue glow
+- footer area can also have soft blue ambient lighting
+
+Important:
+Do not redesign the website.
+Do not change content.
+Do not change routing.
+Do not change CTA text.
+This is only an enhancement layer to make the whole website more visually attractive and more “AI technology” themed.

@@ -194,8 +194,18 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,40,250,0.05),transparent_60%)] pointer-events-none" />
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
+        {/* Base radial */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,40,250,0.07),transparent_60%)] pointer-events-none" />
+        {/* Right-side cyan accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(6,182,212,0.055),transparent_52%)] pointer-events-none" />
+        {/* Bottom-left blue accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_78%,rgba(30,58,138,0.07),transparent_50%)] pointer-events-none" />
+        {/* Faint horizontal electric lines */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.07] to-transparent ambient-pulse" />
+          <div className="absolute top-[68%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/[0.05] to-transparent ambient-pulse" style={{ animationDelay: "3s" }} />
+        </div>
         
         {/* Subtle mesh background */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -332,7 +342,11 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="py-32 px-6" id="about">
+      <section className="relative py-32 px-6 overflow-hidden" id="about">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-[550px] h-[450px] rounded-full blur-[130px] ambient-pulse slow-drift" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.04), transparent 70%)' }} />
+          <div className="absolute bottom-0 left-[10%] w-[450px] h-[350px] rounded-full blur-[110px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(30,58,138,0.06), transparent 70%)', animationDelay: "4s" }} />
+        </div>
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
@@ -405,7 +419,12 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-32 px-6" id="services">
+      <section className="relative py-32 px-6 overflow-hidden" id="services">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/4 right-0 w-[480px] h-[380px] rounded-full blur-[120px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.038), transparent 70%)' }} />
+          <div className="absolute bottom-1/4 left-0 w-[400px] h-[320px] rounded-full blur-[100px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(30,58,138,0.055), transparent 70%)', animationDelay: "5s" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-gradient-to-b from-transparent via-cyan-400/[0.04] to-transparent" />
+        </div>
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
@@ -874,7 +893,11 @@ export default function Home() {
       </section>
 
       {/* WHY NEXORA */}
-      <section className="py-32 px-6" id="why-nexora">
+      <section className="relative py-32 px-6 overflow-hidden" id="why-nexora">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full blur-[150px] ambient-pulse" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.035), rgba(80,50,255,0.035), transparent 70%)' }} />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.10] to-transparent" />
+        </div>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -912,7 +935,7 @@ export default function Home() {
                 </div>
 
                 {/* Bottom accent line */}
-                <div className="h-px bg-white/[0.06] group-hover:bg-white/[0.14] transition-colors duration-500 w-full" />
+                <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/[0.10] to-transparent group-hover:via-cyan-400/[0.30] transition-all duration-500 w-full" />
               </div>
             ))}
           </motion.div>
@@ -1119,7 +1142,10 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="px-6 py-12 border-t border-white/[0.06] bg-black">
+      <footer className="relative px-6 py-12 border-t border-cyan-400/[0.08] bg-black overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full blur-[80px] ambient-pulse" style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.04), rgba(30,58,138,0.05), transparent 70%)' }} />
+        </div>
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
