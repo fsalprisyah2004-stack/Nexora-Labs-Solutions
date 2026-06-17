@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "wouter";
+import { TechBackground } from "../components/TechBackground";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { 
   Film, 
@@ -147,8 +148,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white overflow-hidden">
-      
+    <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white overflow-hidden">
+      <TechBackground />
+
       {/* NAVIGATION */}
       <nav 
         className={`fixed top-0 w-full z-50 transition-all duration-500 flex items-center justify-between px-6 py-5 ${
@@ -195,16 +197,16 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
-        {/* Base radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,40,250,0.07),transparent_60%)] pointer-events-none" />
-        {/* Right-side cyan accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(6,182,212,0.055),transparent_52%)] pointer-events-none" />
-        {/* Bottom-left blue accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_78%,rgba(30,58,138,0.07),transparent_50%)] pointer-events-none" />
-        {/* Faint horizontal electric lines */}
+        {/* Base radial — boosted */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(60,40,250,0.15),transparent_60%)] pointer-events-none" />
+        {/* Right-side cyan accent — boosted */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(6,182,212,0.15),transparent_52%)] pointer-events-none" />
+        {/* Bottom-left blue accent — boosted */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_78%,rgba(30,58,138,0.18),transparent_50%)] pointer-events-none" />
+        {/* Electric lines — boosted */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-          <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.07] to-transparent ambient-pulse" />
-          <div className="absolute top-[68%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/[0.05] to-transparent ambient-pulse" style={{ animationDelay: "3s" }} />
+          <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.22] to-transparent ambient-pulse" />
+          <div className="absolute top-[68%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/[0.18] to-transparent ambient-pulse" style={{ animationDelay: "3s" }} />
         </div>
         
         {/* Subtle mesh background */}

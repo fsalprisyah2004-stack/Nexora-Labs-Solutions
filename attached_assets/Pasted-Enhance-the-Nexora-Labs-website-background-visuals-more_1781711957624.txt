@@ -1,0 +1,117 @@
+Enhance the Nexora Labs website background visuals more noticeably.
+
+Current problem:
+The website still feels too dark, too black-and-white, and the blue technology background effect is too subtle. I want the background to look more alive, more colorful, and more futuristic, but without changing the website structure, layout, buttons, text, links, or content.
+
+Main goal:
+Make the background visuals clearly more visible and more premium with blue/cyan AI technology energy.
+
+Very important:
+
+* Do NOT redesign the website.
+* Do NOT change any text.
+* Do NOT change any buttons.
+* Do NOT change button sizes, button positions, or button links.
+* Do NOT change navigation.
+* Do NOT change portfolio cards.
+* Do NOT change WhatsApp, Instagram, TikTok, or YouTube links.
+* Do NOT remove existing sections.
+* Only enhance the background and ambient visual layer.
+
+What to add:
+Add a more noticeable futuristic blue technology background across the homepage and About page.
+
+The background should include:
+
+* visible deep navy blue gradients
+* cyan electric glow accents
+* soft blue radial light behind main sections
+* subtle AI circuit pattern
+* faint futuristic grid lines
+* electric blue light streaks
+* glowing particles
+* abstract neural network dots and lines
+* soft holographic blue atmosphere
+* section-based blue ambient lighting
+
+Make the change clearly visible:
+The website should no longer feel plain black. It should still be dark and premium, but visitors should clearly see a blue AI technology atmosphere in the background.
+
+Visual direction:
+
+* premium AI company
+* futuristic technology lab
+* dark navy + cyan + electric blue
+* cinematic digital interface
+* luxury tech studio
+* not childish
+* not too crowded
+* not neon nightclub
+* still clean and professional
+
+Background intensity:
+Increase the blue/cyan background visibility by about 35–50%.
+The effect should be noticeable but not overpower the text.
+Text readability must stay strong.
+
+Where to apply:
+
+1. Homepage hero background
+2. Services / capabilities section background
+3. Portfolio section background
+4. Why Nexora section background
+5. About page hero background
+6. About page content sections
+7. Footer background
+
+Specific visual improvements:
+
+* Add a large soft blue/cyan radial glow behind the hero area.
+* Add subtle electric blue grid glow in the background.
+* Add faint circuit-line patterns behind content sections.
+* Add several soft blue light orbs in different areas of the page.
+* Add animated floating particles very subtly.
+* Add a slow-moving background gradient layer.
+* Add blue edge glow to section backgrounds very subtly.
+* Add more depth so the page does not look flat black.
+
+Animation:
+Add lightweight background animations only:
+
+* slow gradient movement
+* soft particle floating
+* faint pulsing blue glow
+* subtle holographic shimmer
+* very slow moving light streaks
+
+Animation rules:
+
+* Keep animations smooth.
+* Keep animations lightweight.
+* Do not create messy looping lines.
+* Do not distract from the content.
+* Do not affect performance badly.
+* Make sure it works on mobile.
+
+Implementation instruction:
+If possible, create a reusable background visual layer/component and apply it to the homepage and About page.
+Use CSS gradients, pseudo-elements, SVG patterns, or lightweight animated divs.
+Do not rely on external heavy images or videos.
+
+Final check:
+After implementation, verify:
+
+1. The website background looks more colorful and futuristic.
+2. The blue/cyan technology atmosphere is clearly visible.
+3. Text is still readable.
+4. Buttons, links, and layouts remain unchanged.
+5. Homepage still works.
+6. About page still works.
+7. Mobile view is clean.
+8. No console errors.
+
+After implementation, report:
+
+* Which background effects were added
+* Which pages were updated
+* Which files were changed

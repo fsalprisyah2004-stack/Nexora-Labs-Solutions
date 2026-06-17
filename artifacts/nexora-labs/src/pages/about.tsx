@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { TechBackground } from "../components/TechBackground";
 import {
   Twitter,
   Linkedin,
@@ -116,7 +117,8 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white">
+    <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white">
+      <TechBackground />
 
       {/* NAV */}
       <nav
@@ -161,15 +163,15 @@ export default function About() {
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
         {/* Background radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(80,60,255,0.09),transparent_65%)] pointer-events-none" />
-        {/* Cyan right-side accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_30%,rgba(6,182,212,0.06),transparent_50%)] pointer-events-none" />
-        {/* Deep blue bottom-left */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_70%,rgba(30,58,138,0.08),transparent_50%)] pointer-events-none" />
-        {/* Faint electric accent lines */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(80,60,255,0.18),transparent_65%)] pointer-events-none" />
+        {/* Cyan right-side accent — boosted */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_30%,rgba(6,182,212,0.15),transparent_50%)] pointer-events-none" />
+        {/* Deep blue bottom-left — boosted */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_70%,rgba(30,58,138,0.18),transparent_50%)] pointer-events-none" />
+        {/* Electric accent lines — boosted */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-          <div className="absolute top-[35%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.06] to-transparent ambient-pulse" />
-          <div className="absolute top-[62%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/[0.04] to-transparent ambient-pulse" style={{ animationDelay: "4s" }} />
+          <div className="absolute top-[35%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/[0.22] to-transparent ambient-pulse" />
+          <div className="absolute top-[62%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/[0.16] to-transparent ambient-pulse" style={{ animationDelay: "4s" }} />
         </div>
 
         {/* AI VISUAL — glowing orb + rings */}
